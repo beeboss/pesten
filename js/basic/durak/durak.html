@@ -5,27 +5,13 @@
     body {background-color: coral;}
     durak.html
     </style>
+    <script src="./randomcard.js"></script>
     <h3>your hand</h3>
-       <img id="card1" onclick="randomCard1()" src="cardstack./c14.png" alt="speelkaart" width="11%">
-       <img id="card2" onclick="randomCard2()" src="cardstack./c14.png" alt="speelkaart" width="11%">
-       <img id="card3" onclick="randomCard3()" src="cardstack./c14.png" alt="speelkaart" width="11%">
-       <img id="card4" onclick="randomCard4()" src="cardstack./c14.png" alt="speelkaart" width="11%">
-    <script>
+       <img id="card1" onclick="randomCard1()" src="cardstack/c17.png" alt="speelkaart" width="11%">
+       <img id="card2" onclick="randomCard2()" src="cardstack/c14.png" alt="speelkaart" width="11%">
+       <img id="card3" onclick="randomCard3()" src="cardstack/c14.png" alt="speelkaart" width="11%">
+       <img id="card4" onclick="randomCard4()" src="cardstack/c14.png" alt="speelkaart" width="11%">
 
-    function willekeurig() {
-       var willekeurig=Math.floor(2+Math.random()*7);
-    }
 
-    function randomCard1() {
-       var image = document.getElementById('card1');
-       image.src="./cardstack/c"+willekeurig()+".png";
-    }
-
-    function randomCard2() {
-       var image = document.getElementById('card2');
-       image.src="./c-schop"+willekeurig()+".png";
-    }
-
-    </script>
   </body>
 </html>

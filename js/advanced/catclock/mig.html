@@ -1,0 +1,36 @@
+<html>
+<h2>migtime</h2>
+
+plattekst
+
+<p id='klok'></p>
+
+<script>
+migshowtime = function() {
+    var migtime=new Date();
+    uren=migtime.getHours();
+    minuten=migtime.getMinutes();
+
+    if ( uren >= 12 ) {
+        meri="PM";
+        }
+    else {
+        meri="AM";
+    }
+
+    if ( minuten < 10 ) {
+        minuten="0"+minuten;
+    }
+    document.write(uren+":"+minuten);
+     	       }
+</script>
+
+
+
+
+<!--  maak klok leesbaarder -->
+
+
+<button type="button" onclick="document.getElementById('klok').innerHTML=migshowtime()">click me</button>
+
+</html>

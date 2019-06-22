@@ -1,0 +1,24 @@
+<html>
+  <!-- canvas lijn hieronder blijkt nodig, maar waarom? -->
+<canvas id="canvas"></canvas>
+
+<!-- style tags nodig om background-color te laten werken -->
+<!-- is het dat "style" aankondigt dat css volgt? -->
+<style>
+body {background-color: coral;}
+</style>
+
+  <span id="someId">apple</span>
+  <span id="banana">banana</span>
+
+<script>
+
+
+var x = document.getElementById('someId');
+x.style.color = '#00FF00';
+
+var y = document.getElementById('banana');
+y.style.color = "#F2CC85";
+
+</script>
+  </html>

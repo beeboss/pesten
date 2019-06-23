@@ -8,4 +8,4 @@ function counter() {
     for (i = 1 ; i < 54 ; i++) {
 	console.log(i);
 	}
-    }
+}

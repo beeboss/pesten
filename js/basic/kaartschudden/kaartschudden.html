@@ -9,7 +9,6 @@
     <p id="demo2">demo2</p>
     <p id="demo3">demo3</p>
     <p id="random number">random number stub</p>
-    <p id="random card">random card stub</p>
     <script>
       var pak=["s2","s3","s4","s5"];
       document.write(pak);
@@ -18,17 +17,12 @@
     <button type="button" onclick="document.getElementById('demo1').innerHTML='func *binnen* button';">funcbinnenbutton</button><br>
     <button type="button" onclick="fu2()";>viafunc</button><br>
       <button onclick="demo3()";>click-for-date</button><br>
-      <button onclick="randomnumber()";>random number</button><br>
-      <!-- <button onclick="randomcard()";>random card</button><br> -->
-      <img id="randomcard" onclick="randomCard()" src="./c-schop2.png" alt="speelkaart" width="30%">
     <script>
 
       function demo3() {
          document.getElementById('demo3').innerHTML=Date();
       }
 
-      // var weg=(3,10,18,41);
-      // document.write(weg[2]);
       function fu2() {
          document.getElementById('demo2').innerHTML="via func ingevuld";
       }
@@ -36,11 +30,6 @@
       function randomnumber() {
          var willekeurig=Math.floor(10+Math.random()*40);
          document.getElementById("random number").innerHTML="random nummer: " + willekeurig;
-      }
-      function randomCard() {
-         var image = document.getElementById("randomcard");
-         var willekeurig=Math.floor(1+Math.random()*4);
-         image.src="./c-schop"+willekeurig+".png";
       }
     </script>
   </body>

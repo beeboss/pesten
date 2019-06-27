@@ -62,7 +62,7 @@ function buildHandstring() {
 
 function takecard() {
    var cardseek="";
-   var willekeurig=Math.floor(1+Math.random()*54);
+   var willekeurig=Math.floor(1+Math.random()*arr.length);
    seekcard="c"+willekeurig;
    var index = arr.indexOf(seekcard);
     if (index > -1) {

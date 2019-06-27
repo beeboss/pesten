@@ -7,14 +7,91 @@
     </style>
 
 
-    <script src="./durak.js"></script>
+<p id="carddeck">carddeck goes here</p>
+
+<!-- nu geintegreerd <script src="./durak.js"</script>    -->
+<script>
+// --- init ---
+var arr=["c1","c2","c3","c4","c5","c6","c7","c8","c9","c10","c11","c12","c13","c14","c15","c16","c17","c18","c19","c20","c21","c22","c23","c24","c25","c26","c27","c28","c29","c30","c31","c32","c33","c34","c35","c36","c37","c38","c39","c40","c41","c42","c43","c44","c45","c46","c47","c48","c49","c50","c51","c52","c53","c54"];
+var yourhand=[];
+
+</script>
+
+
+<script>
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+
+// --- generate deck ---
+function gendeck() {
+    var i;
+    var deckstring=""
+    for (i=0 ; i<54 ; i++) {
+       deckstring=deckstring+"<img src=\"carddeck/" + arr[i] + ".png\"  alt='deckcard' width='8%\'>  ";
+       }
+    document.getElementById("carddeck").innerHTML=deckstring;
+}
+
+////////////////////////////////////////
+// --- generate hand ---
+function genhand() {
+    var i;
+    var handstring=""
+    for (i=0 ; i< yourhand.length ; i++) {
+       handstring=handstring+"<img src=\"carddeck/" + arr[i] + ".png\"  alt='handcard' width='11%\'>  ";
+       }
+    document.getElementById("cardhand").innerHTML=handstring;
+}
+
+////////////////////////////////////////
+
+// --- take card ---
+function takecard() {
+   var willekeurig=Math.floor(1+Math.random()*54);
+   var index = arr.indexOf(willekeurig);
+    if (index > -1) {
+       arr.splice(index, 1);
+       yourhand.push(willekeurig);
+    }
+}
+
+// --- display hand ---
+function displayhand() {
+   var i;
+   for (i=0; i< yourhand.length ; i++) {
+       yourhand=yourhand+"<img src=\"carddeck/" + yourhand[i] + ".png\"  alt='speelkaart' width='11%\'>  ";
+       }
+   document.getElementById("yourhand").innerHTML=yourhand;
+}
+</script>
+
+<button onclick="shuffle(arr) ; gendeck()">shuffle </button>
+<button onclick="takecard() ; displayhand() ">take card </button>
+
+
 
 
     <h3>your hand</h3>
-       <img id="card1" onclick="randomCard1()" src="carddeck/c53.png" alt="speelkaart" width="11%">
-       <img id="card2" onclick="randomCard2()" src="carddeck/c54.png" alt="speelkaart" width="11%">
-       <img id="card3" onclick="randomCard3()" src="carddeck/c53.png" alt="speelkaart" width="11%">
-       <img id="card4" onclick="randomCard4()" src="carddeck/c54.png" alt="speelkaart" width="11%">
+    <p id="yourhand">your hand goes here</p>
+
+    <br>
     <h4>leftover</h4>
     <h4>trashed</h4>
 

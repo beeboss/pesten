@@ -53,7 +53,7 @@ function buildHandstring() {
     var i;
     var handstring=""
     for (i=0 ; i< yourhand.length ; i++) {
-       handstring=handstring+"<img src=\"carddeck/" + handstring[i] + ".png\"  alt='handcard' width='11%\'>  ";
+       handstring=handstring+"<img src=\"carddeck/" + yourhand[i] + ".png\"  alt='handcard' width='11%\'>  ";
        }
     document.getElementById("yourhand").innerHTML=handstring;
 }
@@ -61,11 +61,13 @@ function buildHandstring() {
 ////////////////////////////////////////
 
 function takecard() {
+   var cardseek="";
    var willekeurig=Math.floor(1+Math.random()*54);
-   var index = arr.indexOf(willekeurig);
+   seekcard="c"+willekeurig;
+   var index = arr.indexOf(seekcard);
     if (index > -1) {
        arr.splice(index, 1);
-       yourhand.push(willekeurig);
+       yourhand.push(seekcard);
     }
 }
 
@@ -73,7 +75,7 @@ function takecard() {
 </script>
 
 <button onclick="shuffle(arr) ; buildDeckstring()">shuffle </button>
-<button onclick="takecard() ; buildHandstring() ">take card </button>
+<button onclick="takecard() ; buildHandstring() ; ">take card </button>
 
 
 

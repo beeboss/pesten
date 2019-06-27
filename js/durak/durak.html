@@ -39,8 +39,7 @@ function shuffle(array) {
 }
 
 
-// --- generate deck ---
-function gendeck() {
+function buildDeckstring() {
     var i;
     var deckstring=""
     for (i=0 ; i<54 ; i++) {
@@ -50,19 +49,17 @@ function gendeck() {
 }
 
 ////////////////////////////////////////
-// --- generate hand ---
-function genhand() {
+function buildHandstring() {
     var i;
     var handstring=""
     for (i=0 ; i< yourhand.length ; i++) {
-       handstring=handstring+"<img src=\"carddeck/" + arr[i] + ".png\"  alt='handcard' width='11%\'>  ";
+       handstring=handstring+"<img src=\"carddeck/" + handstring[i] + ".png\"  alt='handcard' width='11%\'>  ";
        }
-    document.getElementById("cardhand").innerHTML=handstring;
+    document.getElementById("yourhand").innerHTML=handstring;
 }
 
 ////////////////////////////////////////
 
-// --- take card ---
 function takecard() {
    var willekeurig=Math.floor(1+Math.random()*54);
    var index = arr.indexOf(willekeurig);
@@ -72,18 +69,11 @@ function takecard() {
     }
 }
 
-// --- display hand ---
-function displayhand() {
-   var i;
-   for (i=0; i< yourhand.length ; i++) {
-       yourhand=yourhand+"<img src=\"carddeck/" + yourhand[i] + ".png\"  alt='speelkaart' width='11%\'>  ";
-       }
-   document.getElementById("yourhand").innerHTML=yourhand;
-}
+
 </script>
 
-<button onclick="shuffle(arr) ; gendeck()">shuffle </button>
-<button onclick="takecard() ; displayhand() ">take card </button>
+<button onclick="shuffle(arr) ; buildDeckstring()">shuffle </button>
+<button onclick="takecard() ; buildHandstring() ">take card </button>
 
 
 

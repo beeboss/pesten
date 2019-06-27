@@ -10,7 +10,7 @@
 // --- init ---
 
 var tt=["ananas","banaan"];
-var arr=["c1.png","c2.png","c3.png","c4.png","c5.png","c6.png","c7.png","c8.png","c9.png","c10.png","c11.png","c12.png","c13.png","c14.png","c15.png","c16.png","c17.png","c18.png","c19.png","c20.png","c21.png","c22.png","c23.png","c24.png","c25.png","c26.png","c27.png","c28.png","c29.png","c30.png","c31.png","c32.png","c33.png","c34.png","c35.png","c36.png","c37.png","c38.png","c39.png","c40.png","c41.png","c42.png","c43.png","c44.png","c45.png","c46.png","c47.png","c48.png","c49.png","c50.png","c51.png","c52.png","c53.png"];
+var arr=["c1","c2","c3","c4","c5","c6","c7","c8","c9","c10","c11","c12","c13","c14","c15","c16","c17","c18","c19","c20","c21","c22","c23","c24","c25","c26","c27","c28","c29","c30","c31","c32","c33","c34","c35","c36","c37","c38","c39","c40","c41","c42","c43","c44","c45","c46","c47","c48","c49","c50","c51","c52","c53"];
 
 // document.write(tt);
 // document.write(arr);
@@ -43,15 +43,15 @@ function shuffle(array) {
 
 
 // --- generate images TESTTEXT ---
-function mk_imgstring() {
+function genimages() {
     var i;
     var imgstring=""
-    for (i=1 ; i<54 ; i++) {
-       imgstring=imgstring+"<img src=\"carddeck/c" + array[$i] + ".png\"  alt='speelkaart' width='11%\'>  ";
+    for (i=0 ; i<52 ; i++) {
+       imgstring=imgstring+"<img src=\"carddeck/" + arr[i] + ".png\"  alt='speelkaart' width='11%\'>  ";
        }
 
 
-    // @@ niet hier? document.write(imgstring);
+    document.write(imgstring);
     // document.write(blablabla);
     // @@ niet hier? document.getElementById("carddeck").innerHTML=imgstring;
 }
@@ -60,8 +60,8 @@ function mk_imgstring() {
 
 
 
-<button onclick="shuffle()">shuffle</button>
-
+<button onclick="shuffle(arr)">shuffle</button>
+<button onclick="genimages()">genimages</button>
 
 
 

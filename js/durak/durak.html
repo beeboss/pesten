@@ -59,15 +59,24 @@ function buildHandstring() {
 }
 
 ////////////////////////////////////////
-
+// take card: kaarten raken niet op want zoekt in willekeurig is een getal van array.length elementen,
+		   en indexof zoekt naar de *values=INHOUD="c+NUMBER"  vd array.
+		   Je blijft dan met grote kans zitten met carddeck die nog kaarten heeft, maar die je niet kan taken
+		   omdat bv: carddeck nog 10 resterende kaarten, je zoekt dus max naar card c10.png, maar een resterende
+		   card in de array 'c40' kan je dan nooit meer pakken.
+		  Als je ombouwt, moet de yourhand.push wel weer de *waarde* gaan bevatten van de card.
+		  Denk dat de takecard daarom moet zoeken met maxvalue array length, maar op het volgnr in de array
+		  een card eruitpakt. Vervolgens takecard, bekijk de waarde van de getrokken kaart, en stop *die* waarde
+		  in de yourhand array.
 function takecard() {
-   var seekcard="";
+//   var seekcard="";
    var willekeurig=Math.floor(1+Math.random()*arr.length);
-   seekcard="c"+willekeurig;
-   var index = arr.indexOf(seekcard);
-    if (index > -1) {
-       arr.splice(index, 1);
-       yourhand.push(seekcard);
+//   seekcard="c"+willekeurig;
+//   var index = arr.indexOf(seekcard);
+//    if (index > -1) {
+       arr.splice(willekeurig, 1);
+
+       yourhand.push(indexOfseekcard);
     }
 }
 

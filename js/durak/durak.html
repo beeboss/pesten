@@ -1,5 +1,6 @@
 <html>
-<title>durak.html</title>
+<!-- @@TODO: 27jun: soms nog undefined.png
+  <title>durak.html</title>
   <body>
     <style>
     body {background-color: coral;}
@@ -7,8 +8,18 @@
     </style>
 
 
-<p id="carddeck">carddeck goes here</p>
 
+<button onclick="shuffle(arr) ; buildDeckstring()">shuffle </button>
+<button onclick="takecard() ; buildHandstring() ; buildDeckstring()">take card </button>
+
+
+<h3>your hand</h3>
+<p id="yourhand">your hand goes here</p>
+
+<br>
+<h4>leftover</h4>
+
+<p id="carddeck">carddeck goes here</p>
 <!-- nu geintegreerd <script src="./durak.js"</script>    -->
 <script>
 // --- init ---
@@ -42,8 +53,8 @@ function shuffle(array) {
 function buildDeckstring() {
     var i;
     var deckstring=""
-    for (i=0 ; i<54 ; i++) {
-       deckstring=deckstring+"<img src=\"carddeck/" + arr[i] + ".png\"  alt='deckcard' width='8%\'>  ";
+    for (i=0 ; i< arr.length ; i++) {
+       deckstring=deckstring+"<img src=\"carddeck/" + arr[i] + ".png\"  alt='deckcard' width='4%\'>  ";
        }
     document.getElementById("carddeck").innerHTML=deckstring;
 }
@@ -53,7 +64,7 @@ function buildHandstring() {
     var i;
     var handstring=""
     for (i=0 ; i< yourhand.length ; i++) {
-       handstring=handstring+"<img src=\"carddeck/" + yourhand[i] + ".png\"  alt='handcard' width='11%\'>  ";
+       handstring=handstring+"<img src=\"carddeck/" + yourhand[i] + ".png\"  alt='handcard' width='4%\'>  ";
        }
     document.getElementById("yourhand").innerHTML=handstring;
 }
@@ -73,17 +84,10 @@ function takecard() {
 
 </script>
 
-<button onclick="shuffle(arr) ; buildDeckstring()">shuffle </button>
-<button onclick="takecard() ; buildHandstring() ; ">take card </button>
 
 
 
 
-    <h3>your hand</h3>
-    <p id="yourhand">your hand goes here</p>
-
-    <br>
-    <h4>leftover</h4>
     <h4>trashed</h4>
 
   </body>

@@ -57,11 +57,13 @@
 
    function takecard() {
       var willekeurig=Math.floor(1+Math.random()*house.length);
+      document.getElementById("willekeurig").innerHTML = willekeurig;
       var cardcontent = house[willekeurig];
-      //   if (cardcontent > -1) {
-              house.splice(cardcontent, 1);
-              yourhand.push(cardcontent);
-      //   }
+         document.getElementById("cardcontent").innerHTML = cardcontent;
+         //   if (cardcontent > -1) {
+         house.splice(cardcontent, 1);
+         yourhand.push(cardcontent);
+         //  }
    }
 
 
@@ -70,13 +72,15 @@
 
    <button onclick="shuffle(house) ; buildHousestring()">shuffle</button>
    <button onclick="takecard() ; buildHandstring() ; buildHousestring()">take card</button>
-
+   <h5>debug</h5>
+       willekeurig:<p id="willekeurig"</p>
+       cardcontent: <p id="cardcontent"></p>
 
    <h3>your hand</h3>
       <p id="yourhand">your hand goes here</p>
 
    <br>
-   <h4>leftover</h4>
+   <h4>house</h4>
       <p id="house">house goes here</p>
 
    <br>

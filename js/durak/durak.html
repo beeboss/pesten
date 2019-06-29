@@ -8,84 +8,79 @@
     </style>
 
 
+   <!-- nu geintegreerd <script src="./durak.js"</script>    -->
+   <script>
+   // --- init ---
+   var house=["c1","c2","c3","c4","c5","c6","c7","c8","c9","c10","c11","c12","c13","c14","c15","c16","c17","c18","c19","c20","c21","c22","c23","c24","c25","c26","c27","c28","c29","c30","c31","c32","c33","c34","c35","c36","c37","c38","c39","c40","c41","c42","c43","c44","c45","c46","c47","c48","c49","c50","c51","c52","c53","c54"];
+   var yourhand=[];
 
 
-<!-- nu geintegreerd <script src="./durak.js"</script>    -->
-<script>
-// --- init ---
-var house=["c1","c2","c3","c4","c5","c6","c7","c8","c9","c10","c11","c12","c13","c14","c15","c16","c17","c18","c19","c20","c21","c22","c23","c24","c25","c26","c27","c28","c29","c30","c31","c32","c33","c34","c35","c36","c37","c38","c39","c40","c41","c42","c43","c44","c45","c46","c47","c48","c49","c50","c51","c52","c53","c54"];
-var yourhand=[];
+   function shuffle(array) {
+      var currentIndex = array.length, temporaryValue, randomIndex;
+
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+
+      return array;
+   }
 
 
-function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
-
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
-
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-
-  return array;
-}
+   function buildHousestring() {
+      var i;
+      var housestring=""
+      for (i=0 ; i< house.length ; i++) {
+         housestring=housestring+"<img src=\"carddeck/" + house[i] + ".png\"  alt='housecard' width='4%\'>  ";
+         }
+      document.getElementById("house").innerHTML=housestring;
+   }
 
 
-function buildHousestring() {
-    var i;
-    var housestring=""
-    for (i=0 ; i< house.length ; i++) {
-       housestring=housestring+"<img src=\"carddeck/" + house[i] + ".png\"  alt='housecard' width='4%\'>  ";
-       }
-    document.getElementById("house").innerHTML=housestring;
-}
+   function buildHandstring() {
+      var i;
+      var handstring=""
+      for (i=0 ; i< yourhand.length ; i++) {
+         handstring=handstring+"<img src=\"carddeck/" + yourhand[i] + ".png\"  alt='handcard' width='4%\'>  ";
+         }
+      document.getElementById("yourhand").innerHTML=handstring;
+   }
 
 
-function buildHandstring() {
-    var i;
-    var handstring=""
-    for (i=0 ; i< yourhand.length ; i++) {
-       handstring=handstring+"<img src=\"carddeck/" + yourhand[i] + ".png\"  alt='handcard' width='4%\'>  ";
-       }
-    document.getElementById("yourhand").innerHTML=handstring;
-}
+   function takecard() {
+      var willekeurig=Math.floor(1+Math.random()*house.length);
+      var cardcontent = house[willekeurig];
+      //   if (cardcontent > -1) {
+              house.splice(cardcontent, 1);
+              yourhand.push(cardcontent);
+      //   }
+   }
 
 
-function takecard() {
-   var seekcard="";
-   var willekeurig=Math.floor(1+Math.random()*house.length);
-//   seekcard="c"+willekeurig;
-   var cardcontent = house[willekeurig];
-//   if (cardcontent > -1) {
-      house.splice(cardcontent, 1);
-      yourhand.push(cardcontent);
-//   }
-}
+   </script>
 
 
-</script>
+   <button onclick="shuffle(house) ; buildHousestring()">shuffle</button>
+   <button onclick="takecard() ; buildHandstring() ; buildHousestring()">take card</button>
 
 
-<button onclick="shuffle(house) ; buildHousestring()">shuffle </button>
-<button onclick="takecard() ; buildHandstring() ; buildHousestring()">take card </button>
+   <h3>your hand</h3>
+      <p id="yourhand">your hand goes here</p>
 
+   <br>
+   <h4>leftover</h4>
+      <p id="house">house goes here</p>
 
-<h3>your hand</h3>
-<p id="yourhand">your hand goes here</p>
+   <br>
+   <h4>trashed</h4>
 
-<br>
-<h4>leftover</h4>
-
-<p id="house">house goes here</p>
-
-
-    <h4>trashed</h4>
-
-  </body>
+   </body>
 </html>

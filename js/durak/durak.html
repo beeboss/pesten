@@ -13,7 +13,7 @@
 <!-- nu geintegreerd <script src="./durak.js"</script>    -->
 <script>
 // --- init ---
-var arr=["c1","c2","c3","c4","c5","c6","c7","c8","c9","c10","c11","c12","c13","c14","c15","c16","c17","c18","c19","c20","c21","c22","c23","c24","c25","c26","c27","c28","c29","c30","c31","c32","c33","c34","c35","c36","c37","c38","c39","c40","c41","c42","c43","c44","c45","c46","c47","c48","c49","c50","c51","c52","c53","c54"];
+var house=["c1","c2","c3","c4","c5","c6","c7","c8","c9","c10","c11","c12","c13","c14","c15","c16","c17","c18","c19","c20","c21","c22","c23","c24","c25","c26","c27","c28","c29","c30","c31","c32","c33","c34","c35","c36","c37","c38","c39","c40","c41","c42","c43","c44","c45","c46","c47","c48","c49","c50","c51","c52","c53","c54"];
 var yourhand=[];
 
 
@@ -37,13 +37,13 @@ function shuffle(array) {
 }
 
 
-function buildDeckstring() {
+function buildHousestring() {
     var i;
-    var deckstring=""
-    for (i=0 ; i< arr.length ; i++) {
-       deckstring=deckstring+"<img src=\"carddeck/" + arr[i] + ".png\"  alt='deckcard' width='4%\'>  ";
+    var housestring=""
+    for (i=0 ; i< house.length ; i++) {
+       housestring=housestring+"<img src=\"carddeck/" + house[i] + ".png\"  alt='housecard' width='4%\'>  ";
        }
-    document.getElementById("carddeck").innerHTML=deckstring;
+    document.getElementById("house").innerHTML=housestring;
 }
 
 
@@ -59,11 +59,11 @@ function buildHandstring() {
 
 function takecard() {
    var seekcard="";
-   var willekeurig=Math.floor(1+Math.random()*arr.length);
+   var willekeurig=Math.floor(1+Math.random()*house.length);
 //   seekcard="c"+willekeurig;
-   var cardcontent = arr[willekeurig];
+   var cardcontent = house[willekeurig];
 //   if (cardcontent > -1) {
-      arr.splice(cardcontent, 1);
+      house.splice(cardcontent, 1);
       yourhand.push(cardcontent);
 //   }
 }
@@ -72,8 +72,8 @@ function takecard() {
 </script>
 
 
-<button onclick="shuffle(arr) ; buildDeckstring()">shuffle </button>
-<button onclick="takecard() ; buildHandstring() ; buildDeckstring()">take card </button>
+<button onclick="shuffle(house) ; buildHousestring()">shuffle </button>
+<button onclick="takecard() ; buildHandstring() ; buildHousestring()">take card </button>
 
 
 <h3>your hand</h3>
@@ -82,7 +82,7 @@ function takecard() {
 <br>
 <h4>leftover</h4>
 
-<p id="carddeck">carddeck goes here</p>
+<p id="house">house goes here</p>
 
 
     <h4>trashed</h4>

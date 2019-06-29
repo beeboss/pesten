@@ -56,12 +56,12 @@
 
 
    function takecard() {
-      var willekeurig=Math.floor(1+Math.random()*house.length);
+      var willekeurig=Math.floor(Math.random()*house.length);
       document.getElementById("willekeurig").innerHTML = willekeurig;
       var cardcontent = house[willekeurig];
          document.getElementById("cardcontent").innerHTML = cardcontent;
          //   if (cardcontent > -1) {
-         house.splice(cardcontent, 1);
+         house.splice(willekeurig,1);
          yourhand.push(cardcontent);
          //  }
    }

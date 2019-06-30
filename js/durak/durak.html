@@ -1,5 +1,8 @@
 <html>
-<!-- @@TODO: functienamen camelcase ; -->
+<!-- @@TODO: functienamen camelcase ; volgorde html,head,body,style,.. ; identation hele doc -->
+<!-- @@TODO: voorbereiden vragen: deepcopy, hoe copy je array, slice vs splice, ... -->
+<head><meta charset="UTF-8">
+  </head>
   <title>durak.html</title>
   <body>
     <style>
@@ -45,13 +48,14 @@
        if ( user == "you" ) {
           user = "igor";
           curhand = ighand;
-          curHandString=igHandString;
+          curHandString = igHandString;
           document.getElementById("debug").innerHTML = "curhand: " + curhand;
           }
       else {
           user = "you";
           curhand = yourhand;
-          curHandString
+          curHandString = yourHandString;
+          document.getElementById("debug").innerHTML = "curhand: " + curhand;
           }
    }
 

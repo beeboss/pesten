@@ -62,9 +62,9 @@
          return;
       }
       var willekeurig=Math.floor(Math.random()*house.length);
-      document.getElementById("willekeurig").innerHTML = willekeurig;
+      // kandidaat-verwijderen: document.getElementById("willekeurig").innerHTML = willekeurig;
       var cardcontent = house[willekeurig];
-         document.getElementById("cardcontent").innerHTML = cardcontent;
+         // kandidaat-verwijderen: document.getElementById("cardcontent").innerHTML = cardcontent;
          //   if (cardcontent > -1) {
          house.splice(willekeurig,1);
          yourhand.push(cardcontent);
@@ -98,18 +98,17 @@
 	    default:
 	       value = rad ;
 	}
-        document.getElementById("suit").innerHTML = suit + " " + value;
+        document.getElementById("last").innerHTML = "last: " + suit + " " + value;
    }
    </script>
 
 
    <button onclick="shuffle(house) ; buildHousestring()">shuffle</button>
    <button onclick="takecard() ; desccard(yourhand[(yourhand.length-1)]) ; buildHandstring() ; buildHousestring()">take card</button>
-   <h5>debug</h5>
-       willekeurig:<p id="willekeurig"</p>
-       cardcontent: <p id="cardcontent"></p>
-       suit       : <p id="suit"></p>
-       comment    :<p id="comment"></p>
+   <h5>--- info ---</h5>
+      <p id="info block">--- info ---<p>
+      <p id="last">last: - </p>
+      <p id="comment">Ygor: you begin (shuffle/take a card)</p>
    <h3>your hand</h3>
       <p id="yourhand">your hand goes here</p>
 

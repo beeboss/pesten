@@ -71,19 +71,40 @@
          //  }
    }
 
-   function desccard(rawcard) {
-        var serial = rawcard.splice(0,0);
-        if (serial <= 13) { suit = 'schop' ; }
-        if (serial <= 26) { suit = 'schop' ; }
-        if (serial <= 13) { suit = 'schop' ; }
-        if (serial <= 13) { suit = 'schop' ; }
-        document.getElementById("suit").innerHTML = suit;
+   function desccard(lasttaken) {
+	// describe last card which user took
+        var serial = lasttaken.replace("c","");
+        // -- suit
+        if (serial <= 13) { suit = "schoppen" ; }
+        else if (serial <= 26) { suit = "harten" ; }
+        else if (serial <= 39) { suit = "klaver" ; }
+        else if (serial <= 52) { suit = "ruiten" ; }
+        else { suit="joker" ;}
+        // -- value
+        var rad=(serial%13);
+        switch(rad) {
+	    case 0:
+	       value = "heer" ;
+               break;
+	    case 1:
+	       value = "aas" ;
+	       break;
+	    case 11:
+	       value = "boer" ;
+	       break;
+	    case 12:
+	       value = "vrouw" ;
+	       break;
+	    default:
+	       value = rad ;
+	}
+        document.getElementById("suit").innerHTML = suit + " " + value;
    }
    </script>
 
 
    <button onclick="shuffle(house) ; buildHousestring()">shuffle</button>
-   <button onclick="takecard() ; desccard(cardcontent) ; buildHandstring() ; buildHousestring()">take card</button>
+   <button onclick="takecard() ; desccard(yourhand[(yourhand.length-1)]) ; buildHandstring() ; buildHousestring()">take card</button>
    <h5>debug</h5>
        willekeurig:<p id="willekeurig"</p>
        cardcontent: <p id="cardcontent"></p>

@@ -1,5 +1,5 @@
 <html>
-<!-- @@TODO: 27jun: soms nog undefined.png
+<!-- @@TODO: functienamen camelcase ; -->
   <title>durak.html</title>
   <body>
     <style>
@@ -13,8 +13,13 @@
    // --- init ---
    var house=["c1","c2","c3","c4","c5","c6","c7","c8","c9","c10","c11","c12","c13","c14","c15","c16","c17","c18","c19","c20","c21","c22","c23","c24","c25","c26","c27","c28","c29","c30","c31","c32","c33","c34","c35","c36","c37","c38","c39","c40","c41","c42","c43","c44","c45","c46","c47","c48","c49","c50","c51","c52","c53","c54"];
    // var house=["c1","c2","c3","c4","c5","c6","c7","c8","c9","c10","c11","c12","c13","c14"];
-   var yourhand=[];
-
+   var yourhand=[]="";
+   var yourHandString="";
+   var ighand=[]="";
+   var igHandString="";
+   var curhand=[]="";
+   var curHandstring=""
+   var user="you";
 
    function shuffle(array) {
       var currentIndex = array.length, temporaryValue, randomIndex;
@@ -35,6 +40,20 @@
       return array;
    }
 
+   function switchUser() {
+      // @@TODO: kopieren vd *inhoud* v curhand+curhandstring naar de you / igor vars
+       if ( user == "you" ) {
+          user = "igor";
+          curhand = ighand;
+          curHandString=igHandString;
+          document.getElementById("debug").innerHTML = "curhand: " + curhand;
+          }
+      else {
+          user = "you";
+          curhand = yourhand;
+          curHandString
+          }
+   }
 
    function buildHousestring() {
       var i;
@@ -48,31 +67,56 @@
 
    function buildHandstring() {
       var i;
-      var handstring=""
-      for (i=0 ; i< yourhand.length ; i++) {
-         handstring=handstring+"<img src=\"carddeck/" + yourhand[i] + ".png\"  alt='handcard' width='4%\'>  ";
+      var curHandString=""
+      for (i=0 ; i< curhand.length ; i++) {
+         curHandString=curHandString+"<img src=\"carddeck/" + curhand[i] + ".png\"  alt='handcard' width='4%\'>  ";
          }
-      document.getElementById("yourhand").innerHTML=handstring;
+      if ( user == "igor" ) {
+         document.getElementById("id-ighand").innerHTML=curHandString;
+         }
+      else {
+         document.getElementById("id-yourhand").innerHTML=curHandString;
+      }
    }
 
 
-   function takecard() {
+//   function buildIghandstring() {
+//      var i;
+//      var igorstring=""
+//      for (i=0 ; i< ighand.length ; i++) {
+//         igorstring=igorstring+"<img src=\"carddeck/" + ighand[i] + ".png\"  alt='igorcard' width='4%\'>  ";
+//         }
+//      document.getElementById("ighand").innerHTML=igorstring;
+//   }
+
+
+   function ckHouseEmpty() {
       if (house.length == 0) {
          document.getElementById("comment").innerHTML = "no cards left in house";
          return;
       }
+   }
+
+
+   function takecard() {
+      ckHouseEmpty();
       var willekeurig=Math.floor(Math.random()*house.length);
       // kandidaat-verwijderen: document.getElementById("willekeurig").innerHTML = willekeurig;
       var cardcontent = house[willekeurig];
          // kandidaat-verwijderen: document.getElementById("cardcontent").innerHTML = cardcontent;
          //   if (cardcontent > -1) {
          house.splice(willekeurig,1);
-         yourhand.push(cardcontent);
+         curhand.push(cardcontent);
          //  }
    }
 
+   function igortakes() {
+       ckHouseEmpty(); //@@ waiting: first trying if takecard can take card for Igor, too..
+   }
+
+
    function desccard(lasttaken) {
-	// describe last card which user took
+        // describe last card which user took
         var serial = lasttaken.replace("c","");
         // -- suit
         if (serial <= 13) { suit = "schoppen" ; }
@@ -83,36 +127,38 @@
         // -- value
         var rad=(serial%13);
         switch(rad) {
-	    case 0:
-	       value = "heer" ;
+            case 0:
+               value = "heer" ;
                break;
-	    case 1:
-	       value = "aas" ;
-	       break;
-	    case 11:
-	       value = "boer" ;
-	       break;
-	    case 12:
-	       value = "vrouw" ;
-	       break;
-	    default:
-	       value = rad ;
-	}
+            case 1:
+               value = "aas" ;
+               break;
+            case 11:
+               value = "boer" ;
+               break;
+            case 12:
+               value = "vrouw" ;
+               break;
+            default:
+               value = rad ;
+        }
         document.getElementById("last").innerHTML = "last: " + suit + " " + value;
    }
    </script>
 
 
    <button onclick="shuffle(house) ; buildHousestring()">shuffle</button>
-   <button onclick="takecard() ; desccard(yourhand[(yourhand.length-1)]) ; buildHandstring() ; buildHousestring()">take card</button>
+   <button onclick="switchUser() ; takecard() ; desccard(curhand[(curhand.length-1)]) ; buildHandstring() ; buildHousestring()">take card</button>
    <h5>--- info ---</h5>
-      <p id="info block">--- info ---<p>
       <p id="last">last: - </p>
-      <p id="comment">Ygor: you begin (shuffle/take a card)</p>
+      <p id="comment">Igor: you begin (shuffle/take a card)</p>
+      <p id="debug">debug goes here</p>
    <h3>your hand</h3>
       <p id="yourhand">your hand goes here</p>
-
    <br>
+   <h3>Igor hand</h3>
+      <p id="id-ighand">Igor hand goes here</p>
+
    <h4>house</h4>
       <p id="house">house goes here</p>
 

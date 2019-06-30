@@ -38,10 +38,12 @@
    }
 
    function switchUser() {
-      // @@TODO: evt. meer users maken, maar zal js niet veel moeilijker maken..
-      if ( user == "you" ) {
+      // @@TODO: kopieren vd *inhoud* v curhand+curhandstring naar de you / igor vars
+       if ( user == "you" ) {
           user = "igor";
           curHand = "ighand";
+          curHandString="ighand"
+          document.getElementById("debug").innerHTML = "curHand: " + curHand;
           }
       else {
           user = "you";
@@ -66,22 +68,22 @@
          curHandString=curHandString+"<img src=\"carddeck/" + curHand[i] + ".png\"  alt='handcard' width='4%\'>  ";
          }
       if ( user == "igor" ) {
-         document.getElementById("ighand").innerHTML=curHandString;
+         document.getElementById("id-ighand").innerHTML=curHandString;
          }
       else {
-         document.getElementById("yourhand").innerHTML=curHandString;
+         document.getElementById("id-yourhand").innerHTML=curHandString;
       }
    }
 
 
-   function buildIghandstring() {
-      var i;
-      var igorstring=""
-      for (i=0 ; i< ighand.length ; i++) {
-         igorstring=igorstring+"<img src=\"carddeck/" + ighand[i] + ".png\"  alt='igorcard' width='4%\'>  ";
-         }
-      document.getElementById("ighand").innerHTML=igorstring;
-   }
+//   function buildIghandstring() {
+//      var i;
+//      var igorstring=""
+//      for (i=0 ; i< ighand.length ; i++) {
+//         igorstring=igorstring+"<img src=\"carddeck/" + ighand[i] + ".png\"  alt='igorcard' width='4%\'>  ";
+//         }
+//      document.getElementById("ighand").innerHTML=igorstring;
+//   }
 
 
    function ckHouseEmpty() {
@@ -146,11 +148,12 @@
    <h5>--- info ---</h5>
       <p id="last">last: - </p>
       <p id="comment">Igor: you begin (shuffle/take a card)</p>
+      <p id="debug">debug goes here</p>
    <h3>your hand</h3>
       <p id="yourhand">your hand goes here</p>
    <br>
    <h3>Igor hand</h3>
-      <p id="ighand">Igor hand goes here</p>
+      <p id="id-ighand">Igor hand goes here</p>
 
    <h4>house</h4>
       <p id="house">house goes here</p>

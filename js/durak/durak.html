@@ -16,11 +16,11 @@
    // --- init ---
    var house=["c1","c2","c3","c4","c5","c6","c7","c8","c9","c10","c11","c12","c13","c14","c15","c16","c17","c18","c19","c20","c21","c22","c23","c24","c25","c26","c27","c28","c29","c30","c31","c32","c33","c34","c35","c36","c37","c38","c39","c40","c41","c42","c43","c44","c45","c46","c47","c48","c49","c50","c51","c52","c53","c54"];
    // var house=["c1","c2","c3","c4","c5","c6","c7","c8","c9","c10","c11","c12","c13","c14"];
-   var yourhand=[]="";
+   var yourhand=[];
    var yourHandString="";
-   var ighand=[]="";
+   var ighand=[];
    var igHandString="";
-   var curhand=[]="";
+   var curhand=[];
    var curHandstring=""
    var user="you";
 
@@ -46,6 +46,8 @@
    function switchUser() {
       // @@TODO: kopieren vd *inhoud* v curhand+curhandstring naar de you / igor vars
        if ( user == "you" ) {
+          // copy values back to player
+          // hiero
           user = "igor";
           curhand = ighand;
           curHandString = igHandString;
@@ -76,10 +78,10 @@
          curHandString=curHandString+"<img src=\"carddeck/" + curhand[i] + ".png\"  alt='handcard' width='4%\'>  ";
          }
       if ( user == "igor" ) {
-         document.getElementById("id-ighand").innerHTML=curHandString;
+         document.getElementById("id-ighand").innerHTML=curhand;
          }
       else {
-         document.getElementById("id-yourhand").innerHTML=curHandString;
+         document.getElementById("id-yourhand").innerHTML=curhand;
       }
    }
 
@@ -158,7 +160,7 @@
       <p id="comment">Igor: you begin (shuffle/take a card)</p>
       <p id="debug">debug goes here</p>
    <h3>your hand</h3>
-      <p id="yourhand">your hand goes here</p>
+      <p id="id-yourhand">your hand goes here</p>
    <br>
    <h3>Igor hand</h3>
       <p id="id-ighand">Igor hand goes here</p>

@@ -63,7 +63,7 @@
 
    function buildHousestring() {
       var i;
-      var housestring=""
+      var housestring="";
       for (i=0 ; i< house.length ; i++) {
          housestring=housestring+"<img src=\"carddeck/" + house[i] + ".png\"  alt='housecard' width='4%\'>  ";
          }
@@ -73,15 +73,15 @@
 
    function buildHandstring() {
       var i;
-      var curHandString=""
+      // NO: dont overrule the GLOABAL var :NOvar curHandString=""NO  # but it works if I put it back, and it started working when i removed this line (!?!)
       for (i=0 ; i< curhand.length ; i++) {
          curHandString=curHandString+"<img src=\"carddeck/" + curhand[i] + ".png\"  alt='handcard' width='4%\'>  ";
          }
       if ( user == "igor" ) {
-         document.getElementById("id-ighand").innerHTML=curhand;
+         document.getElementById("id-ighand").innerHTML=curHandString;
          }
       else {
-         document.getElementById("id-yourhand").innerHTML=curhand;
+         document.getElementById("id-yourhand").innerHTML=curHandString;
       }
    }
 

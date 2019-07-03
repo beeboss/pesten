@@ -24,6 +24,8 @@
    var curhand=[];
    var curHandstring=""
    var user="you";
+   var nextup="igor";
+   var igorsays="";
 
    function shuffle(array) {
       var currentIndex = array.length, temporaryValue, randomIndex;
@@ -50,16 +52,21 @@
           // copy values back to player
           // hiero
           user = "igor";
+
           curhand = ighand;
           curHandString = igHandString;
-          document.getElementById("debug").innerHTML = "curhand: " + curhand;
+          document.getElementById("debug").innerHTML = "player hand: " + curhand;
+          nextup = "you";
           }
       else {
           user = "you";
           curhand = yourhand;
           curHandString = yourHandString;
-          document.getElementById("debug").innerHTML = "curhand: " + curhand;
+          document.getElementById("debug").innerHTML = "player hand: " + curhand;
+          nextup = "igor";
           }
+      document.getElementById("id-nextup").innerHTML = "nextup: " + nextup;
+
    }
 
    function buildHousestring() {
@@ -126,30 +133,51 @@
         switch(rad) {
             case 0:
                value = "heer" ;
+               igorsays="король";
                break;
             case 1:
                value = "aas" ;
+               igorsays="туз";
                break;
             case 11:
                value = "boer" ;
+	       igorsays="валет";
                break;
             case 12:
                value = "vrouw" ;
+	       igorsays="дама";
                break;
             default:
                value = rad ;
         }
         document.getElementById("last").innerHTML = "last: " + suit + " " + value;
    }
-   </script>
 
+
+    function igormaysaysomething() {
+	document.getElementById("id-igorsays").innerHTML = "igor: " + igorsays;
+	igorsays="";    // reset
+    }
+
+
+    function takesequence() {
+        switchUser();
+        takecard();
+	desccard(curhand[(curhand.length-1)]);
+        buildHandstring();
+        buildHousestring();
+        igormaysaysomething();
+    }
+</script>
 
    <button onclick="shuffle(house) ; buildHousestring()">shuffle</button>
-   <button onclick="switchUser() ; takecard() ; desccard(curhand[(curhand.length-1)]) ; buildHandstring() ; buildHousestring()">take card</button>
+   <button onclick="takesequence();">take card</button>
    <h5>--- info ---</h5>
       <p id="last">last: - </p>
       <p id="comment">Igor: you begin (shuffle/take a card)</p>
       <p id="debug">debug goes here</p>
+      <p id="id-nextup">nextup goes here</p>
+      <p id="id-igorsays">igor says goes here </p>
    <h3>your hand</h3>
       <p id="id-yourhand">your hand goes here</p>
    <br>

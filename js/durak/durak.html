@@ -1,5 +1,6 @@
 <html>
 <!-- @@TODO: functienamen camelcase ; volgorde html,head,body,style,.. ; identation hele doc -->
+<!-- @@TODO: correctheid/netheid: bv. de lange imgstring (alt=... 4%...) veranderen in wat als officieel netter wordt gezien -->
 <!-- @@TODO: voorbereiden vragen: deepcopy, hoe copy je array, slice vs splice, ... -->
 <!-- @@TODO: hoe nu losse kaart te selecten om uit te spelen op tafel? er verschijnt niks in statusbalk, ms omdat ze array elekenten zijn doet browser niet mee? -->
 <head><meta charset="UTF-8">
@@ -16,7 +17,7 @@
    <script>
    // --- init ---
    var house=["c1","c2","c3","c4","c5","c6","c7","c8","c9","c10","c11","c12","c13","c14","c15","c16","c17","c18","c19","c20","c21","c22","c23","c24","c25","c26","c27","c28","c29","c30","c31","c32","c33","c34","c35","c36","c37","c38","c39","c40","c41","c42","c43","c44","c45","c46","c47","c48","c49","c50","c51","c52","c53","c54"];
-   // var house=["c1","c2","c3","c4","c5","c6","c7","c8","c9","c10","c11","c12","c13","c14"];
+   var house=["c1","c2","c3","c4","c5","c6","c7","c8","c9"];
    var yourhand=[];
    var yourHandString="";
    var ighand=[];
@@ -47,7 +48,6 @@
    }
 
    function switchUser() {
-      // @@TODO: kopieren vd *inhoud* v curhand+curhandstring naar de you / igor vars
        if ( user == "you" ) {
           // copy values back to player
           // hiero
@@ -70,12 +70,20 @@
    }
 
    function buildHousestring() {
-      var i;
-      var housestring="";
-      for (i=0 ; i< house.length ; i++) {
-         housestring=housestring+"<img src=\"carddeck/" + house[i] + ".png\"  alt='housecard' width='4%\'></img>  ";
-         }
-      document.getElementById("house").innerHTML=housestring;
+       var housestring="";
+       var housecardcounter=0;
+       buildhouse: {
+           var i, row, rowmax, columnmax, housecountcard;
+           rowmax=6;
+           columnmax=9;
+           for (row=0; row < rowmax ; row++ ) {
+               for (column = 0 ; column < columnmax ; column++ ) {
+                   housestring=housestring+"<img src=\"carddeck/" + house[i] + ".png\"  alt='housecard' width='4%\'></img>  ";
+                   if (housecountcard == house.length) break buildhouse;
+                   }
+           }
+       }
+       document.getElementById("house").innerHTML=housestring;
    }
 
 

@@ -8,8 +8,25 @@
 <title>durak.html</title>
 <body>
     <style>
-        body {background-color: coral;}
-        durak.html
+    body {
+        background-color: coral;}
+        title: durak.html;
+        }
+    .button {
+        font-size: 22px;
+        }
+    .buttonred {
+        background-color: darkgreen;
+        color: lightgreen;
+        width: 18%;
+        cursor: pointer;
+        }
+    .buttonblue {
+        background-color: darkblue;
+        color: lightblue;
+        width: 18%;
+        cursor: pointer;
+        }
     </style>
 
     <!-- nu geintegreerd <script src="./durak.js"</script>    -->
@@ -94,7 +111,7 @@
        var i;
        // NO: dont overrule the GLOABAL var :NOvar curHandString=""NO  # but it works if I put it back, and it started working when i removed this line (!?!)
        for (i=0 ; i< curhand.length ; i++) {
-          curHandString=curHandString+"<img src=\"carddeck/" + curhand[i] + ".png\"  alt='handcard' width='8%\'></img>  ";
+          curHandString=curHandString+"<img src=\"carddeck/" + curhand[i] + ".png\"  onhover="pointer" alt='handcard' width='8%\'></img>  ";
           }
        if ( user == "igor" ) {
           document.getElementById("id-ighand").innerHTML=curHandString;
@@ -185,8 +202,8 @@
 </script>
 
 
-    <button onclick="shuffle(house) ; buildHousestring()">shuffle</button>
-    <button onclick="takesequence();">take card</button>
+    <button class = "button buttonred" onclick="shuffle(house) ; buildHousestring()">shuffle</button>
+    <button class = "button buttonblue" onclick="takesequence();">take card</button>
     <h5>--- info ---</h5>
        <p id="last">last: - </p>
        <p id="id-nextup">nextup goes here</p>

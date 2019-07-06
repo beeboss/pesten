@@ -7,7 +7,8 @@
 <!-- @@TODO: css zodat jij,igor,house,info,--- eigen achtergrondkleur krijgen -->
 <!-- @@TODO: dingen als dat ze scherm versmallen, en bv tekst uit buttons loopt ivm px ipv % -->
 <!-- @@TODO: emacsvid nabouwen waarbij ze emacs website laten serveren, zodat je edits instant doorkomen in html -->
-<head><meta charset="UTF-8"></head>
+<!-- @@TODO: ga nu wat extra css erin zetten.  Ze zullen wel noemen dat <div> daar beter voor is... maar ik wil ook leren.. -->
+    <head><meta charset="UTF-8"></head>
 <title>durak.html</title>
 <body>
     <style>
@@ -15,6 +16,14 @@
         background-color: coral;}
         title: durak.html;
         }
+    .playercolors {
+        background-color: black;
+        color: red;
+    }
+    .igorcolors {
+        background-color: darkgrey;
+        color: blue;
+    }
     .button {
         font-size: 22px;
         }
@@ -208,16 +217,21 @@
 
     <button class = "button buttongreen" onclick="shuffle(house) ; buildHousestring()">shuffle</button>
     <button class = "button buttonblue" onclick="takesequence();">take card</button>
+
     <h5>--- info ---</h5>
        <p id="last">last: - </p>
        <p id="id-nextup">nextup goes here</p>
        <p id="id-igorsays">igor: you begin</p>
+    <playercolors>
     <h3>your hand</h3>
        <p id="id-yourhand">your hand goes here</p>
     <br>
+    </playercolors>
+    <igorcolors>
     <h3>Igor hand</h3>
        <p id="id-ighand">Igor hand goes here</p>
 
+    </igorcolors>
     <h4>house</h4>
        <p id="house">house goes here</p>
 

@@ -120,16 +120,23 @@
 
 
     function toggleSelect(i) {
-       var i;
-       document.getElementById(i).style="background-color:black";
-       }
+        var i;
+        var x = document.getElementById(i);
+        if ( x.style.width == "12%" ) {
+            x.style.width = 8% ;
+            }
+        else {
+            x.style = "12%";
+            }
+
+    }
 
 
     function buildHandstring() {
        var i;
        var newCardString;
-       for (i=0 ; i< curhand.length ; i++) {
-           newCardString = "<img src=\"carddeck/" + curhand[i] + ".png\"  id=i onclick=toggleSelect()  alt='handcard' width='8%'></img>"
+       for (i=0 ; i < curhand.length ; i++) {
+           newCardString = "<img src=\"carddeck/" + curhand[i] + ".png\"  id=i onclick=\"style.width='12%'\"  alt='handcard' width='8%'></img>"
            curHandString = curHandString + newCardString;
            }
        if ( user == "igor" ) {

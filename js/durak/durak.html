@@ -119,24 +119,29 @@
     }
 
 
-    function toggleSelect(i) {
-        var i;
-        var x = document.getElementById(i);
-        if ( x.style.width == "12%" ) {
-            x.style.width = 8% ;
-            }
-        else {
-            x.style = "12%";
-            }
-
-    }
+// park-w-werktniet //    function toggleSelect(i) {
+// park-w-werktniet //        var i;
+// park-w-werktniet //        var x = document.getElementById(i);
+// park-w-werktniet //        if ( x.style.width == "12%" ) {
+// park-w-werktniet //            x.style.width = "8%" ;
+// park-w-werktniet //            }
+// park-w-werktniet //        else {
+// park-w-werktniet //            x.style = "12%";
+// park-w-werktniet //            }
+// park-w-werktniet //    }
 
 
     function buildHandstring() {
        var i;
        var newCardString;
-       for (i=0 ; i < curhand.length ; i++) {
-           newCardString = "<img src=\"carddeck/" + curhand[i] + ".png\"  id=i onclick=\"style.width='12%'\"  alt='handcard' width='8%'></img>"
+        // @@ denk toggleSelect gaat niet werken ivm gebrek aan ~inline parsen~ in js,
+        //    ga nu deze lezen/proberen: UPDATE: bron1 is wat vaag. bron1: https://dev.to/bouhm/a-vanilla-js-guide-on-mastering-the-dom-3l9b
+        //    Nieuwe zoekwoorden: examples of manipulating dom javascript
+        // bron2: https://www.hongkiat.com/blog/dom-manipulation-javascript-methods/
+        // bron3: https://www.hongkiat.com/blog/useful-javascript-statements/
+
+        for (i=0 ; i < curhand.length ; i++) {
+            newCardString = "<img src=\"carddeck/" + curhand[i] + ".png\"  id=i onclick='style.width=12%'  alt='handcard' width='8%'></img>"
            curHandString = curHandString + newCardString;
            }
        if ( user == "igor" ) {

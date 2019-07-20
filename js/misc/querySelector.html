@@ -1,0 +1,20 @@
+<html>
+  <p id="important" >paragraph one</p>
+<p>paragraph two</p>
+<div>div one</div>
+<p id="important" >paragraph three</p>
+<div>div two</div>
+
+<script>
+var firstDiv = document.querySelector('div');
+firstDiv.style.color = 'red';
+var allParagraph = document.querySelectorAll('p');
+for(var p of allParagraph) {
+    p.style.color = 'green';
+   }
+// geen CSS selector: var importants = document.querySelectorAll('important');
+// geen CSS selector: for(var i of importants) {
+// geen CSS selector:     i.style.color = 'blue';
+// geen CSS selector:     }
+</script>
+</html>

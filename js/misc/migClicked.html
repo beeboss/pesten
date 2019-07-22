@@ -5,13 +5,17 @@
           <img id="card2" img src="./c50.png"></img>
           <img id="card3" img src="./c54.png"></img>
           <img id="card4" img src="./c4.png"></img>
-</div>
+      </div>
+    <p id="selectedId">selectedId comes here</p>
 
 
 <script>
+    selectedId="";
     document.getElementById("list").addEventListener("click", function(e) {
         // e.target will be the item that was clicked on
         e.target.style.opacity = "0.35";
+        document.getElementById("selectedId").innerHTML = e.target.id;
+
         })
 </script>
    </body>

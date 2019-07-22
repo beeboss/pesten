@@ -3,7 +3,7 @@
 <!-- @@TODO: correctheid/netheid: bv. de lange imgstring (alt=... 4%...) veranderen in wat als officieel netter wordt gezien -->
     <!-- @@TODO: wat css laten zien, knoppen, wat <div> . Lijkt me ff genoeg,.. ms bgplaatje -->
 <!-- @@TODO: voorbereiden vragen: deepcopy, hoe copy je array, slice vs splice, ... -->
-<!-- @@TODO: hoe nu losse kaart te selecten om uit te spelen op tafel? er verschijnt niks in statusbalk, ms omdat ze array elekenten zijn doet browser niet mee? -->
+<!-- @@busy: hoe nu losse kaart te selecten om uit te spelen op tafel? er verschijnt niks in statusbalk, ms omdat ze array elekenten zijn doet browser niet mee? -->
 <!-- @@TODO: css zodat jij,igor,house,info,--- eigen achtergrondkleur krijgen -->
 <!-- @@TODO: dingen als dat ze scherm versmallen, en bv tekst uit buttons loopt ivm px ipv % -->
 <!-- @@TODO: emacsvid nabouwen waarbij ze emacs website laten serveren, zodat je edits instant doorkomen in html -->
@@ -86,7 +86,6 @@
     function switchUser() {
         if ( user == "you" ) {
            // copy values back to player
-           // hiero
            user = "igor";
 
            curhand = ighand;
@@ -125,22 +124,9 @@
     }
 
 
-// park-w-werktniet //    function toggleSelect(i) {
-// park-w-werktniet //        var i;
-// park-w-werktniet //        var x = document.getElementById(i);
-// park-w-werktniet //        if ( x.style.width == "12%" ) {
-// park-w-werktniet //            x.style.width = "8%" ;
-// park-w-werktniet //            }
-// park-w-werktniet //        else {
-// park-w-werktniet //            x.style = "12%";
-// park-w-werktniet //            }
-// park-w-werktniet //    }
-
-
     function buildHandstring() {
        var i;
        var newCardString;
-        // @@ denk toggleSelect gaat niet werken ivm gebrek aan ~inline parsen~ in js,
         //    ga nu deze lezen/proberen: UPDATE: bron1 is wat vaag. bron1: https://dev.to/bouhm/a-vanilla-js-guide-on-mastering-the-dom-3l9b
         //    Nieuwe zoekwoorden: examples of manipulating dom javascript
         // bron2: https://www.hongkiat.com/blog/dom-manipulation-javascript-methods/
@@ -158,9 +144,6 @@
           document.getElementById("id-yourhand").innerHTML=curHandString;
        }
     }
-
-// @@vb: <img id=migimg src="pic_bulbon.gif" onclick = "document.getElementById('migimg').src='pic_bulboff.gif'"></img>
-// @@vb: <img id=migimg src="pic_bulbon.gif" onclick = "document.getElementById('migimg').style='background-color:black'"></img>
 
 
     function ckHouseEmpty() {

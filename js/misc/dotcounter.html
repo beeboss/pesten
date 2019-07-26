@@ -1,0 +1,21 @@
+<html>
+<h3> === dotcounter === </h3>
+
+<script>
+    var dotCounter = 0;
+    function addDot() {
+      setTimeout(function() {
+        if (dotCounter++ < 10) {
+          $('#dots').append('.');
+          addDot();
+        }
+      }, 1000);
+    }
+addDot();
+
+</script>
+
+<p id="id_puntjes">puntjes goes here</p>
+<button id="knop" onclick="document.getElementById("id_puntjes").innerHTML=Date();">click me</button>
+
+</html>

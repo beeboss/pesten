@@ -84,7 +84,7 @@
         var newCardString;
         for (i=0 ; i < curhand.length ; i++) {
             altName = descCard(curhand[i]);
-            newCardString = "<img src=\"carddeck/" + curhand[i] + ".png\"  alt=\"" + altName + "\" width='8%'></img>"
+            newCardString = "<img src=\"carddeck/" + curhand[i] + ".png\" id="+ i + "  alt=\"" + altName + "\" width='8%'></img>"
             curHandString = curHandString + newCardString;
             }
         if ( user == "igor" ) {
@@ -95,8 +95,6 @@
            }
     }
 
-// wat is er tot nu toe veranderd
-// wauw dit is geweldig
 
     function ckHouseEmpty() {
        if (house.length == 0) {
@@ -111,7 +109,7 @@
        var willekeurig=Math.floor(Math.random()*house.length);
        var cardcontent = house[willekeurig];
        house.splice(willekeurig,1);
-       curhand.push(cardcontent.hiero);
+       curhand.push(cardcontent);
        }
 
 
@@ -175,12 +173,13 @@
             // e.target will be the item that was clicked on
             e.target.style.opacity = "0.35";
             document.getElementById("selectedId").innerHTML = descCard(yourhand[e.target.alt]);
-	    setTimeout(cardToTable(e.target.),1400)
+	    /////// hierosetTimeout(cardToTable(e.target.),1400)
 	    // ontable.push(yourhand[e.target]);
             })
 
     }
 
 
-    function cardToTable() {
+/*    function cardToTable() {
 	ontable.push(
+*/

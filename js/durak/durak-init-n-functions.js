@@ -173,6 +173,11 @@
             // e.target will be the item that was clicked on
             e.target.style.opacity = "0.35";
             document.getElementById("selectedId").innerHTML = descCard(yourhand[e.target.alt]);
+	    // ontable.push(yourhand[e.target]);
             })
 
     }
+
+
+//    function cardToTable() {
+//	ontable.push(

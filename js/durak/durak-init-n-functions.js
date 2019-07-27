@@ -104,7 +104,7 @@
     }
 
 
-    function takecard() {
+    function dealCard() {
        ckHouseEmpty();
        var willekeurig=Math.floor(Math.random()*house.length);
        var cardcontent = house[willekeurig];
@@ -160,7 +160,7 @@
 
     function takesequence() {
         switchUser();
-        takecard();
+        dealCard();
 	descCard(curhand[(curhand.length-1)]);
         buildHandstring();
         buildHousestring();

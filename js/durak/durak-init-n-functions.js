@@ -17,7 +17,8 @@
     // ---
     var lastCard="-";
 
-    // @@TODO: bij 4 items vaak randomarray output = input array. Apart script, 1000x afvuren, uitkomsten ordenen. Portfolio in.
+
+    // --- functions ---
     function shuffle(array) {
         var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -79,24 +80,19 @@
 
 
     function buildHandstring() {
-       var i;
-       var newCardString;
-        //    ga nu deze lezen/proberen: UPDATE: bron1 is wat vaag. bron1: https://dev.to/bouhm/a-vanilla-js-guide-on-mastering-the-dom-3l9b
-        //    Nieuwe zoekwoorden: examples of manipulating dom javascript
-        // bron2: https://www.hongkiat.com/blog/dom-manipulation-javascript-methods/
-        // bron3: https://www.hongkiat.com/blog/useful-javascript-statements/
-
+        var i;
+        var newCardString;
         for (i=0 ; i < curhand.length ; i++) {
-           altName = descCard(curhand[i]);
-           newCardString = "<img src=\"carddeck/" + curhand[i] + ".png\"  alt=\"" + altName + "\" width='8%'></img>"
-           curHandString = curHandString + newCardString;
+            altName = descCard(curhand[i]);
+            newCardString = "<img src=\"carddeck/" + curhand[i] + ".png\"  alt=\"" + altName + "\" width='8%'></img>"
+            curHandString = curHandString + newCardString;
+            }
+        if ( user == "igor" ) {
+           document.getElementById("id-ighand").innerHTML=curHandString;
            }
-       if ( user == "igor" ) {
-          document.getElementById("id-ighand").innerHTML=curHandString;
-          }
-       else {
-          document.getElementById("id-yourhand").innerHTML=curHandString;
-       }
+           else {
+           document.getElementById("id-yourhand").innerHTML=curHandString;
+           }
     }
 
 
@@ -104,7 +100,7 @@
        if (house.length == 0) {
           document.getElementById("comment").innerHTML = "no cards left in house";
           return;
-       }
+          }
     }
 
 
@@ -112,15 +108,12 @@
        ckHouseEmpty();
        var willekeurig=Math.floor(Math.random()*house.length);
        var cardcontent = house[willekeurig];
-          //   if (cardcontent > -1) {
-          house.splice(willekeurig,1);
-          curhand.push(cardcontent);
-          //  }
-    }
+       house.splice(willekeurig,1);
+       curhand.push(cardcontent);
+       }
 
 
     function descCard(cCard) {
-         // convert coded cardnr into human description
          var serial = cCard.replace("c","");
          var altName="";
          var suit="";
@@ -180,6 +173,5 @@
             // e.target will be the item that was clicked on
             e.target.style.opacity = "0.35";
             document.getElementById("selectedId").innerHTML = descCard(yourhand[e.target.alt]);
-
             })
-        }
+    }

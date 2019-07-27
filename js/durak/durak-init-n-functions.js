@@ -168,10 +168,11 @@
     }
 
 
-    function selectCard() {
+    function userSelectCard() {
         document.getElementById("id-yourhand").addEventListener("click", function(e) {
             // e.target will be the item that was clicked on
             e.target.style.opacity = "0.35";
             document.getElementById("selectedId").innerHTML = descCard(yourhand[e.target.alt]);
             })
+
     }

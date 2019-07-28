@@ -1,0 +1,59 @@
+<html>
+
+
+<head><meta charset="UTF-8"></head>
+<title>durak.html</title>
+    <link rel="stylesheet" type="text/css" href="durak.css" media="all" />
+    <style>
+        body {
+	 background-color: coral;
+	}
+    </style>
+
+    <!-- nu geintegreerd <script src="./durak.js"</script>    -->
+
+    <script src="durak-init-n-functions.js"></script>
+
+
+    <button class = "button buttongreen" onclick="shuffle(house) ; buildHousestring()">shuffle</button>
+    <button class = "button buttonblue" onclick="takesequence();">take card</button>
+    <button class = "button buttonred" onclick="buildDeck();">redbutton</button>
+
+    <h5>--- info ---</h5>
+       <p id="selectedId">selected card goes here</p>
+       <p id="last">last: - </p>
+       <p id="id-nextup">nextup goes here</p>
+       <p id="id-igorsays">igor: you begin</p>
+
+    <igorcolors>
+    <h3>Igor hand</h3>
+       <p id="id-ighand">Igor hand goes here</p>
+
+    </igorcolors>
+
+    <tablecolors>
+    <h3>table</h3>
+       <p id="id-ontable">table goes here</p>
+    </tablecolors>
+
+    <playercolors>
+    <h3>your hand</h3>
+       <div id="id-yourhand">
+           <p your hand goes here>your hand goes here</p>
+       </div>
+    <br>
+    </playercolors>
+
+    <h4>house</h4>
+       <p id="house">house goes here</p>
+
+    <br>
+    <h4>trashed</h4>
+
+    </body>
+<script>
+// --- main ---
+userSelectCard();
+</script>
+
+</html>

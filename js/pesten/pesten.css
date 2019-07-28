@@ -1,0 +1,36 @@
+<!-- pesten.css -->
+body {
+    <!-- kandidaat-weg:    background-color: coral; -->
+    background-image: bg_1920x1080_wood_pesten_spel.jpg;
+    title: pesten.html;
+    }
+.playercolors {
+    background-color: black;
+    color: red;
+}
+.igorcolors {
+    background-color: darkgrey;
+    color: blue;
+}
+.button {
+    font-size: 22px;
+    }
+.buttongreen {
+    background-color: darkgreen;
+    color: lightgreen;
+    width: 18%;
+    cursor: pointer;
+    }
+.buttonblue {
+    background-color: darkblue;
+    color: lightblue;
+    width: 18%;
+    cursor: pointer;
+    }
+.buttonred {
+    background-color: red;
+    color: white;
+    font: bold;
+    width: 18%;
+    cursor: pointer;
+    }

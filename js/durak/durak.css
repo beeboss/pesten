@@ -26,3 +26,10 @@ body {
     width: 18%;
     cursor: pointer;
     }
+.buttonred {
+    background-color: red;
+    color: white;
+    font: bold;
+    width: 18%;
+    cursor: pointer;
+    }

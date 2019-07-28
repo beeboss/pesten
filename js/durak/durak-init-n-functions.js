@@ -31,8 +31,9 @@
     // --- build deck ---
     function buildDeck() {
 	var i = 0;
-        for ( ; i< deck.length ; i++ ) {
-            deck[i].cid = i;
+        for ( ; i < house.length ; i++ ) {
+            deck[i] = new Card;
+	    deck[i].cid = "c" + i;
 	    deck[i].altName = descCard(deck[i]);
 	}
     }

@@ -1,14 +1,19 @@
 <html>
 
-tagfordje
+<h3> tagfordje </h3>
 
 <script>
 var carName = {
  merk:"Fordje",
  kleur:"metallic blue",
- eigenaar:"Wim"
+ eigenaar:"Wim",
+ toelating: 1985 + 8
  };
-document.write("eigenaar" + carName.eigenaar);
+document.write("eigenaar " + carName.eigenaar);
+document.write("<br>toelating " + carName.toelating);
+carName.toelating = 1972;
+document.write("<br>toelating " + carName.toelating);
+
+
 </script>
 </html>
-

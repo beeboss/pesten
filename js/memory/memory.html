@@ -1,0 +1,61 @@
+<html>
+
+
+<head><meta charset="UTF-8"></head>
+<title>memory.html</title>
+    <link rel="stylesheet" type="text/css" href="memory.css" media="all" />
+    <style>
+        body {
+	 background-color: lightgrey;
+         }
+    </style>
+
+
+    <script src="memory.js"></script>
+
+    <img src="memory-board.png" alt="game's banner w/ players" width="90%"  style="horizontal-align:right"></src>
+    <button class = "button buttonred" onclick="buildDeck();">new game</button>
+
+    <h5>--- info ---</h5>
+    <font2600>
+        <p class="font2600">crazy brown fox jumped over the lazy dog </p>
+        <p style="font-family:HammerFat;">rechtstreeks jaja atari font</p>
+    </font2600>
+
+       <p id="selectedId">selected card goes here</p>
+       <p id="last">last: - </p>
+       <p id="id-nextup">nextup goes here</p>
+       <p id="id-anasays">Ana: you begin</p>
+
+    <anacolors>
+    <h3>Ana hand</h3>
+       <p id="id-anahand">Ana hand goes here</p>
+
+    </anacolors>
+
+    <tablecolors>
+    <h3>table</h3>
+       <p id="id-ontable">table goes here</p>
+    </tablecolors>
+
+    <playercolors>
+    <h3>your hand</h3>
+       <div id="id-yourhand">
+           <p your hand goes here>your hand goes here</p>
+       </div>
+    <br>
+    </playercolors>
+
+    <h4>house</h4>
+       <p id="house">house goes here</p>
+
+    <br>
+    <h4>trashed</h4>
+
+    </body>
+<script>
+// --- main ---
+userSelectCard();
+</script>
+
+</html>

@@ -2,7 +2,7 @@
     // --- init ---
     var deck = [];
     var house=["c1","c2","c3","c4","c5","c6","c7","c8","c9","c10","c11","c12","c13","c14","c15","c16","c17","c18","c19","c20","c21","c22","c23","c24","c25","c26","c27","c28","c29","c30","c31","c32","c33","c34","c35","c36","c37","c38","c39","c40","c41","c42","c43","c44","c45","c46","c47","c48","c49","c50","c51","c52","c53","c54"];
-    //var house=["c1","c2","c3","c4"];
+    var house=["c1","c2"];
     var yourhand=[];
     var ighand=[];
     var curhand=[];
@@ -17,7 +17,7 @@
     var igorsays="";
     // ---
     var lastCard="-";
-
+    var testString="<h1>ZZZZZZZZZZZZZZZZZZZ</h1>";
 
     // --- functions ---
     function shuffle(array) {
@@ -69,13 +69,13 @@
                     i = (row*columnmax)+column;
                     if (i >= house.length) break buildhouse;
                     altName = descCard(house[i]);
-                    housestring=housestring+"<img src=\"carddeck/" + house[i] + ".png\"   alt=\"" + altName + "\" width='6%\'></img>  ";
+                    housestring=housestring+"<img src=\"carddeck/" + house[i] + ".png\" id="+ i + "  alt=\"" + altName + "\" width='6%\'></img>  ";
                     }
                     housestring = housestring + " <br>  ";
             }
 
         }
-        document.getElementById("house").innerHTML=housestring;
+        document.getElementById("id-yourhand").innerHTML=testString;
     }
 
 
@@ -172,9 +172,12 @@
         document.getElementById("id-yourhand").addEventListener("click", function(e) {
             // e.target will be the item that was clicked on
             e.target.style.opacity = "0.35";
+
             document.getElementById("selectedId").innerHTML = descCard(yourhand[e.target.alt]);
-	    /////// hierosetTimeout(cardToTable(e.target.),1400)
-	    // ontable.push(yourhand[e.target]);
+	    // @@werktniet setTimeout(cardToTable(e.target.),140);
+	    var cardcontent = yourhand[e.target.id];
+            yourhand.splice(e.target.id,1);
+	    ontable.push(cardcontent);
             })
 
     }

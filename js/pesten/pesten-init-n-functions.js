@@ -152,7 +152,7 @@
     }
 
 
-    function igormaysaysomething() {
+    function igorSpeak() {
 	document.getElementById("id-igorsays").innerHTML = "igor: " + igorsays;
 	igorsays="";    // reset
     }
@@ -164,7 +164,7 @@
 	descCard(curhand[(curhand.length-1)]);
         buildHandstring();
         buildHousestring();
-        igormaysaysomething();
+        igorSpeak();
     }
 
 

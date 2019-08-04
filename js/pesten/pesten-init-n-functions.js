@@ -172,6 +172,9 @@
         document.getElementById("id-yourhand").addEventListener("click", function(e) {
             // e.target will be the item that was clicked on
             e.target.style.opacity = "0.35";
+            document.getElementById("id-debug1").innerHTML = "e.target.alt = " + e.target.alt;
+            document.getElementById("id-debug2").innerHTML = "e.target.id = " + e.target.id;
+            document.getElementById("id-debug3").innerHTML = "cardcontent=[" + cardcontent + "]";
 
             document.getElementById("selectedId").innerHTML = descCard(yourhand[e.target.alt]);
 	    // @@werktniet setTimeout(cardToTable(e.target.),140);

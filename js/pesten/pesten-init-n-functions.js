@@ -89,10 +89,13 @@
         if ( user == "igor" ) {
            document.getElementById("id-ighand").innerHTML=curHandString;
            }
-           else {
+        else if ( user == "you" {
            document.getElementById("id-yourhand").innerHTML=curHandString;
            }
-    }
+        else {             # user == ontable
+           document.getElementById("id-ontable").innerHTML=curHandString;
+           }
+        }
 
 
     function ckHouseEmpty() {

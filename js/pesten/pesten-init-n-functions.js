@@ -174,13 +174,11 @@
             e.target.style.opacity = "0.35";
             document.getElementById("id-debug1").innerHTML = "e.target.alt = " + e.target.alt;
             document.getElementById("id-debug2").innerHTML = "e.target.id = " + e.target.id;
-            document.getElementById("id-debug3").innerHTML = "cardcontent=[" + cardcontent + "]";
+            document.getElementById("id-debug2").innerHTML = "indexOf = " + e.target.indexOf(e.target.id);
 
-            document.getElementById("selectedId").innerHTML = descCard(yourhand[e.target.alt]);
 	    // @@werktniet setTimeout(cardToTable(e.target.),140);
-	    var cardcontent = yourhand[e.target.id];
             yourhand.splice(e.target.id,1);
-	    ontable.push(cardcontent);
+	    ontable.push(e.target.id);
             })
 
     }

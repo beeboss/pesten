@@ -69,7 +69,7 @@
                     i = (row*columnmax)+column;
                     if (i >= house.length) break buildhouse;
                     altName = descCard(house[i]);
-                    housestring=housestring+"<img src=\"carddeck/" + house[i] + ".png\" id="+ i + "  alt=\"" + altName + "\" width='6%\'></img>  ";
+                    housestring=housestring+"<img src=\"carddeck/" + house[i] + ".png\" id="+ house[i] + "  alt=\"" + altName + "\" width='6%\'></img>  ";
                     }
                     housestring = housestring + " <br>  ";
             }
@@ -84,7 +84,7 @@
         var newCardString;
         for (i=0 ; i < curhand.length ; i++) {
             altName = descCard(curhand[i]);
-            newCardString = "<img src=\"carddeck/" + curhand[i] + ".png\" id="+ i + "  alt=\"" + altName + "\" width='8%'></img>"
+            newCardString = "<img src=\"carddeck/" + curhand[i] + ".png\" id="+ curhand[i] + "  alt=\"" + altName + "\" width='8%'></img>"
             curHandString = curHandString + newCardString;
             }
         if ( user == "igor" ) {

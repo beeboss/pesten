@@ -10,7 +10,6 @@
     var yourHandString="";
     var igHandString="";
     var curHandstring=""
-    var ontable="";
     // ---
     var user="you";
     var nextup="you";
@@ -69,7 +68,7 @@
                     i = (row*columnmax)+column;
                     if (i >= house.length) break buildhouse;
                     altName = descCard(house[i]);
-                    housestring=housestring+"<img src=\"carddeck/" + house[i] + ".png\" id="+ house[i] + "  alt=\"" + altName + "\" width='6%\'></img>  ";
+                    housestring=housestring+"<img src=\"carddeck/" + house[i] + ".png\" index="+ i + " id="+ house[i] + "  alt=\"" + altName + "\" width='6%\'></img>  ";
                     }
                     housestring = housestring + " <br>  ";
             }
@@ -84,7 +83,7 @@
         var newCardString;
         for (i=0 ; i < curhand.length ; i++) {
             altName = descCard(curhand[i]);
-            newCardString = "<img src=\"carddeck/" + curhand[i] + ".png\" id="+ curhand[i] + "  alt=\"" + altName + "\" width='8%'></img>"
+            newCardString = "<img src=\"carddeck/" + curhand[i] + ".png\" index="+ i + " id="+ curhand[i] + "  alt=\"" + altName + "\" width='8%'></img>"
             curHandString = curHandString + newCardString;
             }
         if ( user == "igor" ) {
@@ -174,10 +173,11 @@
             e.target.style.opacity = "0.35";
             document.getElementById("id-debug1").innerHTML = "e.target.alt = " + e.target.alt;
             document.getElementById("id-debug2").innerHTML = "e.target.id = " + e.target.id;
-            document.getElementById("id-debug2").innerHTML = "indexOf = " + e.target.indexOf(e.target.id);
+
+
 
 	    // @@werktniet setTimeout(cardToTable(e.target.),140);
-            yourhand.splice(e.target.id,1);
+            yourhand.splice(e.target.index,1);
 	    ontable.push(e.target.id);
             })
 

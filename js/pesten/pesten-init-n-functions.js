@@ -1,5 +1,6 @@
 // === pesten-init-n-functions ===
     // --- init ---
+    var card = [];
     var deck = [];
     var house=["c1","c2","c3","c4","c5","c6","c7","c8","c9","c10","c11","c12","c13","c14","c15","c16","c17","c18","c19","c20","c21","c22","c23","c24","c25","c26","c27","c28","c29","c30","c31","c32","c33","c34","c35","c36","c37","c38","c39","c40","c41","c42","c43","c44","c45","c46","c47","c48","c49","c50","c51","c52","c53","c54"];
     // var house=["c1","c2"];
@@ -18,7 +19,12 @@
     var lastCard="-";
     var testString="<h1>ZZZZZZZZZZZZZZZZZZZ</h1>";
 
+    // === user-defined vars ===
+    defCardWidthPerc = 6;
     // --- functions ---
+   ///////////      housestring=housestring+"<img src=\"carddeck/" + house[i] + ".png\" index="+ i + " id="+ house[i] + "  alt=\"" + altName + "\" width='6%\'></img>  ";
+
+
     function shuffle(array) {
         var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -89,12 +95,21 @@
         if ( user == "igor" ) {
            document.getElementById("id-ighand").innerHTML=curHandString;
            }
-        else if ( user == "you" {
+        else     // user == you
            document.getElementById("id-yourhand").innerHTML=curHandString;
            }
-        else {             # user == ontable
-           document.getElementById("id-ontable").innerHTML=curHandString;
-           }
+
+
+
+    function buildTable() {
+        var i;
+        var newCardString;
+        for (i=0 ; i < ontable.length ; i++) {
+            altName = descCard(ontable[i]);
+            newCardString = "<img src=\"carddeck/" + ontable[i] + ".png\" index="+ i + " id="+ ontable[i] + "  alt=\"" + altName + "\" width='8%'></img>"
+            onTableString = onTableString + newCardString;
+            }
+        document.getElementById("id-ontable") = onTableString;
         }
 
 
@@ -102,7 +117,7 @@
        if (house.length == 0) {
           document.getElementById("comment").innerHTML = "no cards left in house";
           return;
-          }
+          }  // @@ als de 'if' niet hit, moet je ook code hebben (of ';'). ombouwen graag.
     }
 
 

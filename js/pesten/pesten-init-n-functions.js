@@ -193,7 +193,7 @@
             // e.target will be the item that was clicked on
             e.target.style.opacity = "0.35";
             document.getElementById("id-debug1").innerHTML = "e.target.alt = " + e.target.alt;
-            document.getElementById("id-debug2").innerHTML = "yourhand = " + yourHandString;
+            document.getElementById("id-debug2").innerHTML = "yourhand = " + curHandString;
 
 
 
@@ -201,7 +201,7 @@
             yourhand.splice(e.target.index,1);
 	    ontable.push(e.target.id);
             buildTable();
-            buildHandString;
+            buildHandString();
             })
     }
 

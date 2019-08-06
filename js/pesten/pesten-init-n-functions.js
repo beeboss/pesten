@@ -11,6 +11,7 @@
     var yourHandString="";
     var igHandString="";
     var curHandstring=""
+    var onTableString="";
     // ---
     var user="you";
     var nextup="you";
@@ -100,7 +101,6 @@
            }
 
 
-
     function buildTable() {
         var i;
         var newCardString;
@@ -109,7 +109,7 @@
             newCardString = "<img src=\"carddeck/" + ontable[i] + ".png\" index="+ i + " id="+ ontable[i] + "  alt=\"" + altName + "\" width='8%'></img>"
             onTableString = onTableString + newCardString;
             }
-        document.getElementById("id-ontable") = onTableString;
+        document.getElementById("id-table") = onTableString;
         }
 
 
@@ -197,6 +197,7 @@
 	    // @@werktniet setTimeout(cardToTable(e.target.),140);
             yourhand.splice(e.target.index,1);
 	    ontable.push(e.target.id);
+            buildTable();
             })
 
     }

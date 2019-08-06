@@ -109,7 +109,8 @@
             newCardString = "<img src=\"carddeck/" + ontable[i] + ".png\" index="+ i + " id="+ ontable[i] + "  alt=\"" + altName + "\" width='8%'></img>"
             onTableString = onTableString + newCardString;
             }
-        document.getElementById("id-table") = onTableString;
+        document.getElementById("id-debug3").innerHTML = "[" + ontable + "]";
+        document.getElementById("id-table").innerHTML = onTableString;
         }
 
 

@@ -88,7 +88,6 @@
     function buildHandstring() {
         var i;
         var newCardString;
-        curHandString="";
         for (i=0 ; i < curhand.length ; i++) {
             altName = descCard(curhand[i]);
             newCardString = "<img src=\"carddeck/" + curhand[i] + ".png\" index="+ i + " id="+ curhand[i] + "  alt=\"" + altName + "\" width='8%'></img>"
@@ -105,7 +104,6 @@
     function buildTable() {
         var i;
         var newCardString;
-        onTableString="";    // reset
         for (i=0 ; i < ontable.length ; i++) {
             altName = descCard(ontable[i]);
             newCardString = "<img src=\"carddeck/" + ontable[i] + ".png\" index="+ i + " id="+ ontable[i] + "  alt=\"" + altName + "\" width='8%'></img>"
@@ -193,7 +191,11 @@
             // e.target will be the item that was clicked on
             e.target.style.opacity = "0.35";
             document.getElementById("id-debug1").innerHTML = "e.target.alt = " + e.target.alt;
+<<<<<<< HEAD
             document.getElementById("id-debug2").innerHTML = "yourhand = " + curHandString;
+=======
+            document.getElementById("id-debug2").innerHTML = "e.target.id = " + e.target.id;
+>>>>>>> parent of 825802c... from .html, buildTable does work, buildHandString does not. Why?
 
 
 
@@ -201,8 +203,12 @@
             yourhand.splice(e.target.index,1);
 	    ontable.push(e.target.id);
             buildTable();
+<<<<<<< HEAD
             buildHandString();
+=======
+>>>>>>> parent of 825802c... from .html, buildTable does work, buildHandString does not. Why?
             })
+
     }
 
 

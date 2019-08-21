@@ -1,0 +1,27 @@
+<!-- randomizer.css -->
+body {
+    title: randomizer test;
+    }
+
+.button {
+    font-size: 22px;
+    }
+.buttonyellow {
+    background-color: yellow;
+    color: black;
+    width: 30%;
+    cursor: pointer;
+    }
+.buttonpurple {
+    background-color: purple;
+    color: lightblue;
+    width: 30%;
+    cursor: pointer;
+    }
+.buttonred {
+    background-color: red;
+    color: white;
+    font: bold;
+    width: 30%;
+    cursor: pointer;
+    }

@@ -1,0 +1,11 @@
+[user]
+        email = michel@diffcity.com
+        name = Michel van Gruijthuijsen
+[push]
+        default = simple
+[diff]
+        tool = vimdiff
+[difftool]
+        prompt = false
+[alias]
+        d = difftool

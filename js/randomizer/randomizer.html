@@ -1,0 +1,37 @@
+<html>
+<head><meta charset="UTF-8"></head>
+<title>randomizer.html</title>
+    <link rel="stylesheet" type="text/css" href="randomizer.css" media="all" />
+
+    <script src="randomizer.js"></script>
+
+    <button class = "button buttonyellow" onclick="randomize(house) ;">blind run 10 times</button>
+    <button class = "button buttonyellow" onclick="randomize(house) ;">blind run 100 times</button>
+    <button class = "button buttonyellow" onclick="randomize(house) ;">blind run 1000 times</button>
+
+    <button class = "button buttonpurple" onclick="randomize(house) ;">gfx run 10 times</button>
+    <button class = "button buttonpurple" onclick="randomize(house) ;">gfx run 100 times</button>
+    <button class = "button buttonpurple" onclick="randomize(house) ;">gfx run 1000 times</button>
+
+    <button class = "button buttonred" onclick="reset();">clear</button>
+
+
+    <form action="/action_page.php">
+      First name: <input type="text" name="fname"><br>
+      Last name: <input type="text" name="lname"><br>
+      <input type="submit" value="Submit">
+    </form>
+
+
+        <h5>--- stats ---</h5>
+           <p id="nruns">selected card goes here</p>
+           <p id="nforms">selected card goes here</p>
+           <p id="top 3 forms">selected card goes here</p>
+           <p>-------------</p>
+           <p id="id-debug1">** debug #1 goes here **</p>
+           <p id="id-debug2">** debug #2 goes here **</p>
+           <p id="id-debug3">** debug #3 goes here **</p>
+
+
+    </body>
+</html>

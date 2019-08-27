@@ -60,7 +60,7 @@
            curHandString = yourHandString;
            nextup = "igor";
            }
-       document.getElementById("id-nextup").innerHTML = "nextup: " + nextup;
+       document.getElementById("id-nextup").innerHTML = "<mark>nextup: " + nextup + "</mark>";
     }
 
 
@@ -99,7 +99,7 @@
            }
         else     // user == you
            document.getElementById("id-yourhand").innerHTML=curHandString;
-           document.getElementById("id-debug2").innerHTML = "yourhand: " + yourhand;
+           document.getElementById("id-debug2").innerHTML = "<mark>yourhand: " + yourhand + "</mark>";
            }
 
 
@@ -111,14 +111,14 @@
             newCardString = "<img src=\"carddeck/" + ontable[i] + ".png\" index="+ i + " id="+ ontable[i] + "  alt=\"" + altName + "\" width='8%'></img>"
             onTableString = onTableString + newCardString;
             }
-        document.getElementById("id-debug3").innerHTML = "[" + ontable + "]";
+        document.getElementById("id-debug3").innerHTML = "<mark>[" + ontable + "]</mark>";
         document.getElementById("id-table").innerHTML = onTableString;
         }
 
 
     function ckHouseEmpty() {
        if (house.length == 0) {
-          document.getElementById("comment").innerHTML = "no cards left in house";
+          document.getElementById("comment").innerHTML = "<mark>no cards left in house</mark>";
           return;
           }  // @@ als de 'if' niet hit, moet je ook code hebben (of ';'). ombouwen graag.
     }
@@ -167,13 +167,13 @@
                 igorsays="...";
          }
          altName = suit + " " + value;
-         document.getElementById("last").innerHTML = altName;
+         document.getElementById("last").innerHTML = "<mark>last: " + altName + "</mark>";
     return altName;
     }
 
 
     function igorSpeak() {
-	document.getElementById("id-igorsays").innerHTML = "igor: " + igorsays;
+	document.getElementById("id-igorsays").innerHTML = "<mark>igor: " + igorsays + "</mark>";
 	igorsays="";    // reset
     }
 
@@ -195,7 +195,7 @@
 		// @@werktniet setTimeout(cardToTable(e.target.),140);
 		yourhand.splice(e.target.index, 1);
 		ontable.push(e.target.id);
-        document.getElementById("id-debug1").innerHTML = ontable;
+        document.getElementById("id-debug1").innerHTML = "<mark>" + ontable + "</mark>";
 		buildTable();
 		buildHandstring();
         })

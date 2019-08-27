@@ -10,7 +10,7 @@
     var ontable=[];
     var yourHandString="";
     var igHandString="";
-    var curHandstring=""
+    var curHandString=""
     var onTableString="";
     // ---
     var user="you";
@@ -64,7 +64,7 @@
     }
 
 
-    function buildHousestring() {
+    function buildHouseString() {
         var housestring="";
         buildhouse: {
             var i, row;
@@ -85,7 +85,7 @@
     }
 
 
-    function buildHandstring() {
+    function buildHandString() {
         var i;
         var newCardString;
         curHandString="";
@@ -106,6 +106,7 @@
     function buildTable() {
         var i;
         var newCardString;
+        onTableString = "";
         for (i=0 ; i < ontable.length ; i++) {
             altName = descCard(ontable[i]);
             newCardString = "<img src=\"carddeck/" + ontable[i] + ".png\" index="+ i + " id="+ ontable[i] + "  alt=\"" + altName + "\" width='8%'></img>"
@@ -181,9 +182,9 @@
     function takesequence() {
         switchUser();
         dealCard();
-	descCard(curhand[(curhand.length-1)]);
-        buildHandstring();
-        buildHousestring();
+	    descCard(curhand[(curhand.length-1)]);
+        buildHandString();
+        buildHouseString();
         igorSpeak();
     }
 
@@ -197,7 +198,7 @@
 		ontable.push(e.target.id);
         document.getElementById("id-debug1").innerHTML = "<mark>" + ontable + "</mark>";
 		buildTable();
-		buildHandstring();
+		buildHandString();
         })
     }
 

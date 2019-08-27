@@ -190,23 +190,14 @@
         document.getElementById("id-yourhand").addEventListener("click", function(e) {
             // e.target will be the item that was clicked on
             e.target.style.opacity = "0.35";
-            document.getElementById("id-debug1").innerHTML = "e.target.alt = " + e.target.alt;
-<<<<<<< HEAD
-            document.getElementById("id-debug2").innerHTML = "yourhand = " + curHandString;
-=======
-            document.getElementById("id-debug2").innerHTML = "e.target.id = " + e.target.id;
->>>>>>> parent of 825802c... from .html, buildTable does work, buildHandString does not. Why?
-
-
-
+            // off // document.getElementById("id-debug1").innerHTML = "e.target.alt = " + e.target.alt;
+            // off // document.getElementById("id-debug2").innerHTML = "yourhand = " + curHandString;
+            // off // document.getElementById("id-debug2").innerHTML = "e.target.id = " + e.target.id;
 	    // @@werktniet setTimeout(cardToTable(e.target.),140);
             yourhand.splice(e.target.index,1);
 	    ontable.push(e.target.id);
             buildTable();
-<<<<<<< HEAD
             buildHandString();
-=======
->>>>>>> parent of 825802c... from .html, buildTable does work, buildHandString does not. Why?
             })
 
     }

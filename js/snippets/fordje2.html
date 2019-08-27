@@ -3,15 +3,20 @@
 <h3> tagfordje </h3>
 
 <script>
+  // --- definitions ---
     var carName = {
         brand: "Fordje",
         color: "metallic blue",
         owner: "Wim",
         admission: 1965 + 8, // ~parsing allowed
     };
+
+  // --- functions ---
+  function  outputDetails() {
     document.write("<br>admission:\t" + carName.admission);
     document.write("<br>color:" + carName.color);
 </script>
 
+          document.getElementById("id_carDetails").innerHTML=outputDetails();
 <p id="id_carDetails">car details go here</p>
 </html>

@@ -1,0 +1,1 @@
+in iedere dir,subdir link maken om terug te springen naar de documentroot

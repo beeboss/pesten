@@ -88,6 +88,7 @@
     function buildHandstring() {
         var i;
         var newCardString;
+        curHandString="";
         for (i=0 ; i < curhand.length ; i++) {
             altName = descCard(curhand[i]);
             newCardString = "<img src=\"carddeck/" + curhand[i] + ".png\" index="+ i + " id="+ curhand[i] + "  alt=\"" + altName + "\" width='8%'></img>"
@@ -98,6 +99,7 @@
            }
         else     // user == you
            document.getElementById("id-yourhand").innerHTML=curHandString;
+           document.getElementById("id-debug2").innerHTML = "yourhand: " + yourhand;
            }
 
 
@@ -187,22 +189,17 @@
 
 
     function userSelectCard(e) {
-            document.getElementById("id-yourhand").addEventListener("click", function(e) {
-			// e.target will be the item that was clicked on
-                alert(e.target.id);
-			e.target.style.opacity = "0.35";
-			// off // document.getElementById("id-debug1").innerHTML = "e.target.alt = " + e.target.alt;
-			// off // document.getElementById("id-debug2").innerHTML = "yourhand = " + curHandString;
-			// off // document.getElementById("id-debug2").innerHTML = "e.target.id = " + e.target.id;
+        document.getElementById("id-yourhand").addEventListener("click", function(e) {
+        // e.target will be the item that was clicked on
+		e.target.style.opacity = "0.35";
 		// @@werktniet setTimeout(cardToTable(e.target.),140);
-			yourhand.splice(e.target.index,1);
+		yourhand.splice(e.target.index, 1);
 		ontable.push(e.target.id);
-			buildTable();
-			buildHandString();
-			})
-
-	}
-
+        document.getElementById("id-debug1").innerHTML = ontable;
+		buildTable();
+		buildHandstring();
+        })
+    }
 
 /*    function cardToTable() {
 	ontable.push(

@@ -84,6 +84,22 @@
     }
 
 
+    function ArrayToString(tmpA) {
+        var i;
+        var tmpS="";
+        var outS="";
+        for (i=0 ; i < tmpA.length ; i++) {
+            altName = descCard(tmpA[i]);
+            tmpS = "<img src=\"carddeck/" + tmpA[i] + ".png\" index="+ i + " id="+ tmpA[i] + "  alt=\"" + altName + "\" width='8%'></img>"
+            outS = outS + newCardString;
+            }
+        return outS;
+          ////// let op: onderstaande 2 lijnen moeten afgehandeld worden in beide *callers* en dan uit deze func *verwijderd* worden:
+          // document.getElementById("id-ighand").innerHTML=outS;
+          // document.getElementById("id-debug-igor").innerHTML = "<mark>igor: " + curhand + "</mark>";
+        }
+
+
     function buildHandString() {
         var i;
         var newCardString;

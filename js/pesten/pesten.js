@@ -40,27 +40,27 @@
             temporaryValue = array[currentIndex];
             array[currentIndex] = array[randomIndex];
             array[randomIndex] = temporaryValue;
-        }
+            }
         return array;
-    }
+        }
 
 
     function switchUser() {
         // je kan ook doen, ipv de "if..." : user=nextup, maar dan op end blokje vaststellen wie cur player is
         if ( user == "you" ) {
-           user = "igor";
-           curhand = ighand;
-           curHandString = igHandString;
-           nextup = "you";
-           }
-       else {
-           user = "you";
-           curhand = yourhand;
-           curHandString = yourHandString;
-           nextup = "igor";
-           }
-       document.getElementById("id-nextup").innerHTML = "<mark>nextup: " + nextup + "</mark>";
-    }
+            user = "igor";
+            curhand = ighand;
+            curHandString = igHandString;
+            nextup = "you";
+            }
+        else {
+            user = "you";
+            curhand = yourhand;
+            curHandString = yourHandString;
+            nextup = "igor";
+            }
+        document.getElementById("id-nextup").innerHTML = "<mark>nextup: " + nextup + "</mark>";
+        }
 
 
     function buildHouseString() {
@@ -77,11 +77,10 @@
                     housestring= ArrayToString(house);
                     }
                     housestring = housestring + " <br>  ";
+                }
             }
-
-        }
         document.getElementById("id-house").innerHTML=housestring;
-    }
+        }
 
 
     function ArrayToString(tmpA) {
@@ -119,65 +118,65 @@
 
 
     function ckHouseEmpty() {
-       if (house.length == 0) {
-          document.getElementById("comment").innerHTML = "<mark>no cards left in house</mark>";
-          return;
-          }  // @@ als de 'if' niet hit, moet je ook code hebben (of ';'). ombouwen graag.
-    }
+        if (house.length == 0) {
+           document.getElementById("comment").innerHTML = "<mark>no cards left in house</mark>";
+           return;
+           }  // @@ als de 'if' niet hit, moet je ook code hebben (of ';'). ombouwen graag.
+        }
 
 
     function dealCard() {
-       ckHouseEmpty();
-       var willekeurig=Math.floor(Math.random()*house.length);
-       var cardcontent = house[willekeurig];
-       house.splice(willekeurig,1);
-       curhand.push(cardcontent);
-       }
+        ckHouseEmpty();
+        var willekeurig=Math.floor(Math.random()*house.length);
+        var cardcontent = house[willekeurig];
+        house.splice(willekeurig,1);
+        curhand.push(cardcontent);
+        }
 
 
     function descCard(cCard) {
-         var serial = cCard.replace("c","");
-         var altName="";
-         var suit="";
-         // -- suit
-         if (serial <= 13) { suit = "schoppen" ; }
-         else if (serial <= 26) { suit = "harten" ; }
-         else if (serial <= 39) { suit = "klaver" ; }
-         else if (serial <= 52) { suit = "ruiten" ; }
-         else { suit="joker" ;}
-         // -- value
-         var rad=(serial%13);
-         switch(rad) {
-             case 0:
-                value = "heer" ;
-                igorsays="король";
-                break;
-             case 1:
-                value = "aas" ;
-                igorsays="туз";
-                break;
-             case 11:
-                value = "boer" ;
-                igorsays="валет";
-                break;
-             case 12:
-                value = "vrouw" ;
-                igorsays="дама";
-                break;
-             default:
-                value = rad ;
-                igorsays="...";
-         }
-         altName = suit + " " + value;
-         document.getElementById("last").innerHTML = "<mark>last: " + altName + "</mark>";
-    return altName;
-    }
+     	var serial = cCard.replace("c","");
+		var altName="";
+		var suit="";
+		// -- suit
+		if (serial <= 13) { suit = "schoppen" ; }
+		else if (serial <= 26) { suit = "harten" ; }
+		else if (serial <= 39) { suit = "klaver" ; }
+		else if (serial <= 52) { suit = "ruiten" ; }
+		else { suit="joker" ;}
+		// -- value
+		var rad=(serial%13);
+		switch(rad) {
+			case 0:
+			   value = "heer" ;
+			   igorsays="король";
+			   break;
+			case 1:
+			   value = "aas" ;
+			   igorsays="туз";
+			   break;
+			case 11:
+			   value = "boer" ;
+			   igorsays="валет";
+			   break;
+			case 12:
+			   value = "vrouw" ;
+			   igorsays="дама";
+			   break;
+			default:
+			   value = rad ;
+			   igorsays="...";
+      	       }
+	        altName = suit + " " + value;
+	        document.getElementById("last").innerHTML = "<mark>last: " + altName + "</mark>";
+            return altName;
+            }
 
 
     function igorSpeak() {
-	document.getElementById("id-igorsays").innerHTML = "<mark>igor: " + igorsays + "</mark>";
-	igorsays="";    // reset
-    }
+	    document.getElementById("id-igorsays").innerHTML = "<mark>igor: " + igorsays + "</mark>";
+	    igorsays="";    // reset
+        }
 
 
     function takesequence() {
@@ -187,21 +186,18 @@
         buildHandString();
         buildHouseString();
         igorSpeak();
-    }
+        }
 
 
     function userSelectCard(e) {
         document.getElementById("id-yourhand").addEventListener("click", function(e) {
-        // e.target will be the item that was clicked on
-		//park: geeft dit het probleem met de ontable dubbele kaarten? // e.target.style.opacity = "0.35";
-		// @@werktniet setTimeout(cardToTable(e.target.),140);
-		yourhand.splice(e.target.index, 1);
-		ontable.push(e.target.id);
-		buildTable();
-		buildHandString();
-        })
-    }
+            // e.target will be the item that was clicked on
+	        //park: !geeft probleem met de ontable dubbele kaarten! // e.target.style.opacity = "0.35";
+	        // @@werktniet setTimeout(cardToTable(e.target.),140);
+	        ontable.push(e.target.id);
+	        yourhand.splice(e.target.index, 1);
 
-/*    function cardToTable() {
-	ontable.push(
-*/
+	        buildTable();
+	        buildHandString();
+            })
+        }

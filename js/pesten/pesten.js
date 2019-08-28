@@ -193,7 +193,7 @@
     function userSelectCard(e) {
         document.getElementById("id-yourhand").addEventListener("click", function(e) {
         // e.target will be the item that was clicked on
-		e.target.style.opacity = "0.35";
+		//park: geeft dit het probleem met de ontable dubbele kaarten? // e.target.style.opacity = "0.35";
 		// @@werktniet setTimeout(cardToTable(e.target.),140);
 		yourhand.splice(e.target.index, 1);
 		ontable.push(e.target.id);

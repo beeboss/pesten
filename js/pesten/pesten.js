@@ -46,10 +46,9 @@
 
 
     function switchUser() {
+        // je kan ook doen, ipv de "if..." : user=nextup, maar dan op end blokje vaststellen wie cur player is
         if ( user == "you" ) {
-           // copy values back to player
            user = "igor";
-
            curhand = ighand;
            curHandString = igHandString;
            nextup = "you";
@@ -96,11 +95,13 @@
             }
         if ( user == "igor" ) {
            document.getElementById("id-ighand").innerHTML=curHandString;
+           document.getElementById("id-debug-igor").innerHTML = "<mark>igor: " + curhand + "</mark>";
            }
-        else     // user == you
+        else  {           // user == you
            document.getElementById("id-yourhand").innerHTML=curHandString;
-           document.getElementById("id-debug2").innerHTML = "<mark>yourhand: " + yourhand + "</mark>";
+           document.getElementById("id-debug-you").innerHTML = "<mark>you: " + curhand + "</mark>";
            }
+        }
 
 
     function buildTable() {
@@ -112,8 +113,8 @@
             newCardString = "<img src=\"carddeck/" + ontable[i] + ".png\" index="+ i + " id="+ ontable[i] + "  alt=\"" + altName + "\" width='8%'></img>"
             onTableString = onTableString + newCardString;
             }
-        document.getElementById("id-debug3").innerHTML = "<mark>[" + ontable + "]</mark>";
         document.getElementById("id-table").innerHTML = onTableString;
+        document.getElementById("id-deubg-ontable").innerHTML = "<mark>[ontable:" + ontable + "]</mark>";
         }
 
 
@@ -196,7 +197,6 @@
 		// @@werktniet setTimeout(cardToTable(e.target.),140);
 		yourhand.splice(e.target.index, 1);
 		ontable.push(e.target.id);
-        document.getElementById("id-debug1").innerHTML = "<mark>" + ontable + "</mark>";
 		buildTable();
 		buildHandString();
         })

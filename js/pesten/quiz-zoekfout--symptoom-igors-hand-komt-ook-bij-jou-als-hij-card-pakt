@@ -84,37 +84,36 @@
     }
 
 
-    function ArrayToString(tmpA) {
-        var i;
-        var tmpS="";
-        var outS="";
-        for (i=0 ; i < tmpA.length ; i++) {
-            altName = descCard(tmpA[i]);
-            tmpS = "<img src=\"carddeck/" + tmpA[i] + ".png\" index="+ i + " id="+ tmpA[i] + "  alt=\"" + altName + "\" width='8%'></img>"
-            outS = outS + tmpS;
-            }
-        return outS;
-        }
-
-
     function buildHandString() {
+        var i;
+        var newCardString;
+        curHandString="";
+        for (i=0 ; i < curhand.length ; i++) {
+            altName = descCard(curhand[i]);
+            newCardString = "<img src=\"carddeck/" + curhand[i] + ".png\" index="+ i + " id="+ curhand[i] + "  alt=\"" + altName + "\" width='8%'></img>"
+            curHandString = curHandString + newCardString;
+            }
         if ( user == "igor" ) {
-           igHandString = ArrayToString(ighand);
-           document.getElementById("id-ighand").innerHTML=igHandString;
-           document.getElementById("id-debug-igor").innerHTML = "<mark>igor: " + ighand + "</mark>";
+           document.getElementById("id-ighand").innerHTML=curHandString;
+           document.getElementById("id-debug-igor").innerHTML = "<mark>igor: " + curhand + "</mark>";
            }
-        else  {           // user == you
-           yourHandString = ArrayToString(yourhand);
-           document.getElementById("id-yourhand").innerHTML=yourHandString;
-           document.getElementById("id-debug-you").innerHTML = "<mark>you: " + yourhand + "</mark>";
+        else     // user == you
+           document.getElementById("id-yourhand").innerHTML=curHandString;
+           document.getElementById("id-debug-you").innerHTML = "<mark>you: " + curhand + "</mark>";
            }
-        }
 
 
     function buildTable() {
-        onTableString = ArrayToString(ontable);
-        document.getElementById("id-ontable").innerHTML = onTableString;
-        document.getElementById("id-debug-ontable").innerHTML = "<mark>[ontable:" + ontable + "]</mark>";
+        var i;
+        var newCardString;
+        onTableString = "";
+        for (i=0 ; i < ontable.length ; i++) {
+            altName = descCard(ontable[i]);
+            newCardString = "<img src=\"carddeck/" + ontable[i] + ".png\" index="+ i + " id="+ ontable[i] + "  alt=\"" + altName + "\" width='8%'></img>"
+            onTableString = onTableString + newCardString;
+            }
+        document.getElementById("id-table").innerHTML = onTableString;
+        document.getElementById("id-deubg-ontable").innerHTML = "<mark>[ontable:" + ontable + "]</mark>";
         }
 
 

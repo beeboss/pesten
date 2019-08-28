@@ -74,7 +74,7 @@
                     i = (row*columnmax)+column;
                     if (i >= house.length) break buildhouse;
                     altName = descCard(house[i]);
-                    housestring=housestring+"<img src=\"carddeck/" + house[i] + ".png\" index="+ i + " id="+ house[i] + "  alt=\"" + altName + "\" width='6%\'></img>  ";
+                    housestring= ArrayToString(house);
                     }
                     housestring = housestring + " <br>  ";
             }

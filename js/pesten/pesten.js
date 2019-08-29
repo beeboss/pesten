@@ -89,7 +89,8 @@
         var outS="";
         for (i=0 ; i < tmpA.length ; i++) {
             altName = descCard(tmpA[i]);
-            tmpS = "<img src=\"carddeck/" + tmpA[i] + ".png\" index="+ i + " id="+ tmpA[i] + "  alt=\"" + altName + "\" width='8%'></img>"
+            //org:with [index] field //tmpS = "<img src=\"carddeck/" + tmpA[i] + ".png\" index="+ i + " id="+ tmpA[i] + "  alt=\"" + altName + "\" width='8%'></img>"
+            tmpS = "<img src=\"carddeck/" + tmpA[i] + ".png\" id="+ tmpA[i] + "  alt=\"" + altName + "\" width='8%'></img>"
             outS = outS + tmpS;
             }
         return outS;
@@ -195,7 +196,7 @@
 	        //park: !geeft probleem met de ontable dubbele kaarten! // e.target.style.opacity = "0.35";
 	        // @@werktniet setTimeout(cardToTable(e.target.),140);
 
-	        yourhand.splice(e.target.index, 1);
+	        yourhand.splice(yourhand.indexOf(e.target.id), 1);
 	        buildHandString();
             // reset index for card that got thrown on-table:
             //wordt al afgehandeld in ArrayToString; index moet via js worden bepaald:// e.target.index = ontable.length;

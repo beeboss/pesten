@@ -22,10 +22,9 @@
 
     // === user-defined vars ===
     defCardWidthPerc = 6;
-    // --- functions ---
-   ///////////      housestring=housestring+"<img src=\"carddeck/" + house[i] + ".png\" index="+ i + " id="+ house[i] + "  alt=\"" + altName + "\" width='6%\'></img>  ";
 
 
+    // === functions ===
     function shuffle(array) {
         var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -46,6 +45,7 @@
 
 
     function switchUser() {
+        // @@ ?wat is de functie hiervan nog, nu ArrayToString er is?
         // je kan ook doen, ipv de "if..." : user=nextup, maar dan op end blokje vaststellen wie cur player is
         if ( user == "you" ) {
             user = "igor";
@@ -194,10 +194,12 @@
             // e.target will be the item that was clicked on
 	        //park: !geeft probleem met de ontable dubbele kaarten! // e.target.style.opacity = "0.35";
 	        // @@werktniet setTimeout(cardToTable(e.target.),140);
-	        ontable.push(e.target.id);
-	        yourhand.splice(e.target.index, 1);
 
-	        buildTable();
+	        yourhand.splice(e.target.index, 1);
 	        buildHandString();
+            // reset index for card that got thrown on-table:
+            //wordt al afgehandeld in ArrayToString; index moet via js worden bepaald:// e.target.index = ontable.length;
+	        ontable.push(e.target.id);
+	        buildTable();
             })
         }

@@ -1,0 +1,20 @@
+
+* vergeten chars
+** Q fordje
+tagatom:ziet het ook niet
+<html>
+
+tagfordje
+
+<script>
+var carName {
+ merk:"Fordje",
+ kleur:"metallic blue",
+ eigenaar:"Wim"
+ };
+document.write(carName.eigenaar);
+</script>
+</html>
+** A fordje
+var carName = <---
+            ^

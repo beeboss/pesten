@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<body>
+<p id="yep">hier komt de uitkomst van c</p>
+
+<button id="cvertelknop" onclick=berekenc()>druk op deze knop om c te weten te komen</button>
+
+<script>
+function berekenc() {
+var a = 3;
+var b = 14;
+var c = a**b;
+document.getElementById("yep").innerHTML="c is geworden:" + c;
+document.getElementById("cvertelknop").innerHTML="mijn werk zit erop";
+}
+</script>
+
+<h2>ondertiteling aan</h2>
+
+<script>
+  a=2;
+  //document.getElementById("yep").innerHTML="jazekertjes";
+</script>
+
+<button id="knop" onclick=button2appear()>ik wil zusje knop</button>
+
+<p id="zusjehier"></p>
+
+<script>
+function button2appear() {
+document.getElementById("zusjehier").innerHTML="<button id=subknop>daar ben ik dan :)</button>"
+}
+</script>
+
+<button id="plaatjeknop" onclick("toonplaatje()")>plaatje zien</button>
+
+<p id="plaatjestub"></p>
+
+<script>
+function toonplaatje() {
+  document.getElementById("plaatjestub").innerHTML='ff parked, img mk gaat hierniet';
+}
+
+
+document.write("hi from this document.write dingding");
+/// verder met img: https://stackoverflow.com/questions/12485600/how-to-make-images-appear-in-javascript#12485679
+var img = document.createElement("img");
+img.src="beastie.jpg";
+img.width=50;
+img.height=100;
+img.alt="beastie";
+//This next line will  just add it to the <body> tag
+document.body.appendChild("img");
+</script>
+</body>
+</html>

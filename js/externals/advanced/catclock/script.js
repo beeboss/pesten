@@ -103,8 +103,8 @@ var updateClock = function()
 updateClock();
 
 // Getting the clock to increment once a second
-var oneSecond = 5000;
-setInterval( updateClock, oneSecond);
+var myInterval = 5000;
+setInterval( updateClock, myInterval);
 
 
 // Getting the Party Time Button To Work

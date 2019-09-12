@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+  </head>
+  <body>
+    <header>Hi, I'm your header today</header>
+    <link type="stylesheet" content="text/css" href="./funcfeest.css" media="all"></link>
+    <script src="funcfeest.js"></script>
+
+
+    <button onclick="document.getElementById('demo').innerHTML=Date();">show time</button>
+    <button onclick="hideEl('demo');">hide el</button>
+    <button onclick="showEl('demo')";>show el</button>
+    <button onclick="randomColor('demo')";>random color</button>
+    <button class="button buttonred" onclick="reloadDoc()";>RELOAD</button>
+    <button id="id_eloq" onclick="eloqButton();">activate eloqButton</button>
+
+    <form>
+        Nr. of "click-me" buttons (max 3)" <input id="id_nbutton" type="text" placeholder="1,2 or 3">
+    </form>
+
+    <img src="assets/clickMe1.jpg" id="id_clickme" onclick="randomImage()" alt="clickme-image";></img>
+    <!-- todoes:
+      (code vb 'lightbulb': jij kiest met klikken door plaatjesrij, js zegt welk plaatje (geeft de FILEname))
+    -->
+
+
+    <p  class="p snickers" id="demo" >stuff happens here</p>
+    <button class="button snickers" onclick=this.innerHTML="(geklikt)";>SNICKERS!</button>
+
+
+
+  </body>
+</html>

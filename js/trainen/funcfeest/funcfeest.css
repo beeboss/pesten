@@ -1,0 +1,25 @@
+
+.snickers {
+    color: #f4bd4b;
+    background-color: #461808;
+    }
+
+.buttonred {
+    color: white;
+    background-color: red;
+    style: pointer;
+    }
+
+div {
+  width: 320px;
+  padding: 10px;
+  border: 5px solid red;
+  margin: 200;
+  }
+
+.divmig {
+  width: 160px;
+  padding: 10px;
+  border: 5px solid green;
+  margin: 0;
+  }

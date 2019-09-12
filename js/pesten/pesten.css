@@ -1,9 +1,4 @@
 <!-- pesten.css -->
-body {
-    title: pesten.html;
-    <!-- @@TODO: kijken of body hier in css-file kan werken ipv in html-file te moeten -->
-    <!-- background-image: url("bg_1920x1080_wood_pesten_spel.jpg"); -->
-    }
 .py {
     color: yellow;
     font-weight: bold;

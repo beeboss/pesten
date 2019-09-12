@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <h1>Rekentoets</h1>
+        <!-- @@todo:
+             - schooljaar(moeilijkheidsgraad),
+             - meer dan optellen: */-/\/
+             - 24-sommen
+             - timer die afloopt
+             .. </h2> -->
+        <script  src="rekentoets.js"></script>
+        <form>
+            Opgave: <p id="id_problem"></p>
+            Uitkomst: <input id="id_userSolution" type="text">
+        </form>
+        <p id="id_systemComment">..</p>
+        <script>
+            genProblem();
+            setTimeout(ckUserSolution(), 5000);
+        </script>
+    </body>
+</html>

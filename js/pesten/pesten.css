@@ -33,3 +33,10 @@
     width: 18%;
     cursor: pointer;
     }
+.stickynote {
+    width: 30%;
+    background-color: yellow;
+    color: black;
+    padding: 10px;
+    font-size: 20px;
+    }

@@ -46,8 +46,6 @@
 
 
     function switchUser() {
-        // @@ ?wat is de functie hiervan nog, nu ArrayToString er is?
-        // je kan ook doen, ipv de "if..." : user=nextup, maar dan op end blokje vaststellen wie cur player is
         if ( user == "you" ) {
             user = "igor";
             curhand = ighand;
@@ -75,7 +73,7 @@
 
 
     function actionIgor() {
-        // for each card: gooi "eerste-de-beste" kaart neer als dat volgens regels mag, heb je niks, koop kaart
+        // strategie igor: gooi "eerste-de-beste" kaart neer als dat volgens regels mag, heb je niks, koop kaart
         var i = 0;
         while (  i < ighand[(ighand.length-1)] ) {
             if ( ckCardPlayable[i] == 1 ) {

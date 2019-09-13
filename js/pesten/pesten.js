@@ -8,6 +8,7 @@
     var ighand=[];
     var curhand=[];
     var ontable=[];
+    var topOfTable=[];
     var yourHandString="";
     var igHandString="";
     var curHandString=""
@@ -52,14 +53,64 @@
             curhand = ighand;
             curHandString = igHandString;
             nextup = "you";
+            actionIgor();
             }
         else {
             user = "you";
             curhand = yourhand;
             curHandString = yourHandString;
             nextup = "igor";
+            actionYou();
             }
         document.getElementById("id-nextup").innerHTML = "<mark>nextup: " + nextup + "</mark>";
+        }
+
+
+    function ckCardPlayable (cCard) {
+        topOfTable = ontable[(ontable.length - 1)];
+        mustBeSuit = topOfTable.suit;
+        mustBeNumber = topOfTable.rad;
+        wantToPlay = descCard[cCard];
+
+
+    function actionIgor() {
+        // for each card: gooi "eerste-de-beste" kaart neer als dat volgens regels mag, heb je niks, koop kaart
+        var i;
+        for ( i = 0; i < ighand[(ighand.length-1)] ) {
+            mayBePlayed = ckCardPlayable[i];
+            igseek: if ( mayBePlayed == 0 ) {
+                        continue;
+                        }
+                    else {
+                        break igseek;
+                        }
+            // @@TODO: check of igor wel kaart KAN gooien, of dat hij moet KOPEN
+            igorsays="I throw ighand[i]";
+            buildHandString();
+            playCard(ighand[i]);
+        }
+
+
+    function actionYou() {
+         document.getElementById("id-yourhand").addEventListener("click", function(e) {
+         // e.target will be the item that was clicked on
+
+         mayBePlayed = ckCardPlayable(e.target.id);
+         if ( mayBePlayed == 0 ) {
+             document.getElementById("comment").innerHTML = "not a valid card";
+             }
+         else {
+             yourhand.splice(yourhand.indexOf(e.target.id), 1);
+             buildHandString();
+             playCard(e.target.id);
+             }})
+        }
+
+
+    function playCard(cCard) {
+        ontable.push(cCard);
+        topOfTable = cCard;
+        buildTable();
         }
 
 
@@ -126,7 +177,7 @@
         }
 
 
-    function userTakeCard() {
+    function takeCardFromHouse() {
         ckHouseEmpty();
         // @@TODO: optie mk 2 speelwijzen: je krijgt bovenste kaart v house, of random kaart v house
         var willekeurig=Math.floor(Math.random()*house.length);
@@ -183,7 +234,7 @@
 
     function takeSequence() {
         switchUser();
-        userTakeCard();
+        // @@TODO: player kan OFWEL card on table gooien OFWEL takeCardFromHouse();
 	    descCard(curhand[(curhand.length-1)]);
         buildHandString();
         buildHouseString();
@@ -191,17 +242,19 @@
         }
 
 
-    function userSelectCard(e) {
-        document.getElementById("id-yourhand").addEventListener("click", function(e) {
-            // e.target will be the item that was clicked on
-	        //park: !geeft probleem met de ontable dubbele kaarten! // e.target.style.opacity = "0.35";
-	        // @@werktniet setTimeout(cardToTable(e.target.),140);
-
-	        yourhand.splice(yourhand.indexOf(e.target.id), 1);
-	        buildHandString();
-            // reset index for card that got thrown on-table:
-            //wordt al afgehandeld in ArrayToString; index moet via js worden bepaald:// e.target.index = ontable.length;
-	        ontable.push(e.target.id);
-	        buildTable();
-            })
-        }
+/* old: nu: actionYou    function userSelectCard(e) {
+ *       document.getElementById("id-yourhand").addEventListener("click", function(e) {
+ *           // e.target will be the item that was clicked on
+ *           //park: !geeft probleem met de ontable dubbele kaarten! // e.target.style.opacity = "0.35";
+ *           // @@werktniet setTimeout(cardToTable(e.target.),140);
+ *
+ *           yourhand.splice(yourhand.indexOf(e.target.id), 1);
+ *           buildHandString();
+ *           // reset index for card that got thrown on-table:
+ *           //wordt al afgehandeld in ArrayToString; index moet via js worden bepaald:// e.target.index = ontable.length;
+ *           ontable.push(e.target.id);
+ *           hiero
+ *           buildTable();
+ *           })
+ *       }
+ */

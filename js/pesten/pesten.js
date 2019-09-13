@@ -58,7 +58,7 @@
             curhand = yourhand;
             curHandString = yourHandString;
             nextup = "igor";
-            actionYou();
+            youTryHandCard();
             }
         document.getElementById("id-nextup").innerHTML = "nextup: " + nextup ;
         }
@@ -89,7 +89,7 @@
         }
 
 
-    function actionYou() {
+    function youTryHandCard() {
          document.getElementById("id-yourhand").addEventListener("click", function(e) {
          // e.target will be the item that was clicked on
 

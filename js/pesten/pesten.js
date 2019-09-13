@@ -69,6 +69,8 @@
         mustBeSuit = topOfTable.suit;
         mustBeNumber = topOfTable.rad;
         wantToPlay = descCard[cCard];
+        document.getElementById('id_igor').innerHTML = "ckCardPlayable:returning 1 until this func works!!";
+        return 1;
     }
 
 

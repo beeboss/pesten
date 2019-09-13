@@ -62,7 +62,7 @@
             nextup = "igor";
             actionYou();
             }
-        document.getElementById("id-nextup").innerHTML = "<mark>nextup: " + nextup + "</mark>";
+        document.getElementById("id-nextup").innerHTML = "nextup: " + nextup ;
         }
 
 
@@ -151,12 +151,12 @@
         if ( user == "igor" ) {
            igHandString = ArrayToString(ighand);
            document.getElementById("id-ighand").innerHTML=igHandString;
-           document.getElementById("id-debug-igor").innerHTML = "<mark>igor: " + ighand + "</mark>";
+           document.getElementById("id-debug-igor").innerHTML = "igor: " + ighand ;
            }
         else  {           // user == you
            yourHandString = ArrayToString(yourhand);
            document.getElementById("id-yourhand").innerHTML=yourHandString;
-           document.getElementById("id-debug-you").innerHTML = "<mark>you: " + yourhand + "</mark>";
+           document.getElementById("id-debug-you").innerHTML = "you: " + yourhand ;
            }
         }
 
@@ -164,13 +164,13 @@
     function buildTable() {
         onTableString = ArrayToString(ontable);
         document.getElementById("id-ontable").innerHTML = onTableString;
-        document.getElementById("id-debug-ontable").innerHTML = "<mark>[ontable:" + ontable + "]</mark>";
+        document.getElementById("id-debug-ontable").innerHTML = "[ontable:" + ontable + "]";
         }
 
 
     function ckHouseEmpty() {
         if (house.length == 0) {
-           document.getElementById("comment").innerHTML = "<mark>no cards left in house</mark>";
+           document.getElementById("comment").innerHTML = "no cards left in house";
            return;
            }  // @@ als de 'if' niet hit, moet je ook code hebben (of ';'). ombouwen graag.
         }
@@ -220,13 +220,13 @@
 			   igorsays="...";
       	       }
 	        altName = suit + " " + value;
-	        document.getElementById("last").innerHTML = "<mark>last: " + altName + "</mark>";
+	        document.getElementById("last").innerHTML = "last: " + altName ;
             return altName;
             }
 
 
     function igorSpeak() {
-	    document.getElementById("id-igorsays").innerHTML = "<mark>igor: " + igorsays + "</mark>";
+	    document.getElementById("id-igorsays").innerHTML = "igor: " + igorsays ;
 	    igorsays="";    // reset
         }
 

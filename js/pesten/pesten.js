@@ -83,8 +83,7 @@
                 playCard(ighand[i]);
                 }
             }
-            // @@TODO: rename takeCardFromHouse to buyCard
-            bCard = takeCardFromHouse();
+            bCard = buyCard();
             igorsays="I buy a card ... :(";
             curhand.push(bCard);
         }
@@ -176,7 +175,7 @@
         }
 
 
-    function takeCardFromHouse() {
+    function buyCard() {
         ckHouseEmpty();
         // @@TODO: optie mk 2 speelwijzen: je krijgt bovenste kaart v house, of random kaart v house
         var willekeurig=Math.floor(Math.random()*house.length);
@@ -233,27 +232,9 @@
 
     function takeSequence() {
         switchUser();
-        // @@TODO: player kan OFWEL card on table gooien OFWEL takeCardFromHouse();
+        // @@TODO: player kan OFWEL card on table gooien OFWEL buyCard();
 	    descCard(curhand[(curhand.length-1)]);
         buildHandString();
         buildHouseString();
         igorSpeak();
         }
-
-
-/* old: nu: actionYou    function userSelectCard(e) {
- *       document.getElementById("id-yourhand").addEventListener("click", function(e) {
- *           // e.target will be the item that was clicked on
- *           //park: !geeft probleem met de ontable dubbele kaarten! // e.target.style.opacity = "0.35";
- *           // @@werktniet setTimeout(cardToTable(e.target.),140);
- *
- *           yourhand.splice(yourhand.indexOf(e.target.id), 1);
- *           buildHandString();
- *           // reset index for card that got thrown on-table:
- *           //wordt al afgehandeld in ArrayToString; index moet via js worden bepaald:// e.target.index = ontable.length;
- *           ontable.push(e.target.id);
- *           hiero
- *           buildTable();
- *           })
- *       }
- */

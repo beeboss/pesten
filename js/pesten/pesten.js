@@ -125,7 +125,7 @@
                     i = (row*columnmax)+column;
                     if (i >= house.length) break buildhouse;
                     altName = descCard(house[i]);
-                    housestring= ArrayToString(house);
+                    housestring= ArrayToString(house);   // expensive AND inside a loop: @@TODO:make func more efficient
                     }
                     housestring = housestring + " <br>  ";
                 }

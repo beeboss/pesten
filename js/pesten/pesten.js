@@ -110,7 +110,7 @@
     function playCard(cCard) {
         ontable.push(cCard);
         topOfTable = cCard;
-        buildTable();
+        buildTableString();
         }
 
 
@@ -162,7 +162,7 @@
         }
 
 
-    function buildTable() {
+    function buildTableString() {
         onTableString = ArrayToString(ontable);
         document.getElementById("id-ontable").innerHTML = onTableString;
         document.getElementById("id-debug-ontable").innerHTML = "[ontable:" + ontable + "]";

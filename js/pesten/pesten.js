@@ -75,19 +75,18 @@
 
     function actionIgor() {
         // for each card: gooi "eerste-de-beste" kaart neer als dat volgens regels mag, heb je niks, koop kaart
-        var i;
-        for ( i = 0; i < ighand[(ighand.length-1)] ) {
-            mayBePlayed = ckCardPlayable[i];
-            igseek: if ( mayBePlayed == 0 ) {
-                        continue;
-                        }
-                    else {
-                        break igseek;
-                        }
-            // @@TODO: check of igor wel kaart KAN gooien, of dat hij moet KOPEN
-            igorsays="I throw ighand[i]";
-            buildHandString();
-            playCard(ighand[i]);
+        var i = 0;
+        while (  i < ighand[(ighand.length-1)] ) {
+            if ( ckCardPlayable[i] == 1 ) {
+                igorsays="I throw ighand[i]";
+                buildHandString();
+                playCard(ighand[i]);
+                }
+            }
+            // @@TODO: rename takeCardFromHouse to buyCard
+            bCard = takeCardFromHouse();
+            igorsays="I buy a card ... :(";
+            curhand.push(bCard);
         }
 
 

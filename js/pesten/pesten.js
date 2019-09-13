@@ -110,7 +110,7 @@
     function playCard(cCard) {
         ontable.push(cCard);
         topOfTable = cCard;
-        buildTableString();
+        refreshTable();
         }
 
 
@@ -148,7 +148,7 @@
         }
 
 
-    function buildHandString() {
+    function refreshHand() {
         if ( user == "igor" ) {
            igHandString = ArrayToString(ighand);
            document.getElementById("id-ighand").innerHTML=igHandString;
@@ -162,7 +162,7 @@
         }
 
 
-    function buildTableString() {
+    function refreshTable() {
         onTableString = ArrayToString(ontable);
         document.getElementById("id-ontable").innerHTML = onTableString;
         document.getElementById("id-debug-ontable").innerHTML = "[ontable:" + ontable + "]";
@@ -236,7 +236,7 @@
         switchUser();
         // @@TODO: player kan OFWEL card on table gooien OFWEL buyCard();
 	    descCard(curhand[(curhand.length-1)]);
-        buildHandString();
+        refreshHand();
         buildHouseString();
         igorSpeak();
         }

@@ -71,6 +71,7 @@
         mustBeSuit = topOfTable.suit;
         mustBeNumber = topOfTable.rad;
         wantToPlay = descCard[cCard];
+    }
 
 
     function actionIgor() {
@@ -81,6 +82,7 @@
                 igorsays="I throw ighand[i]";
                 buildHandString();
                 playCard(ighand[i]);
+                i++;
                 }
             }
             bCard = buyCard();

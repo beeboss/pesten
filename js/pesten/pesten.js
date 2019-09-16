@@ -65,20 +65,22 @@
         }
 
 
-    exports.switchUser = () => {
-        if ( user == "you" ) {
+    exports.switchUser = (tmpUser) => {
+        if ( tmpUser == "you" ) {
             user = "igor";
             curhand = ighand;
             curHandString = igHandString;
             nextup = "you";
             actionIgor();
+            return user;
             }
         else {
             user = "you";
             curhand = yourhand;
             curHandString = yourHandString;
             nextup = "igor";
-            youTryHandCard();
+            actionYou();
+            return user;
             }
         }
 
@@ -108,6 +110,11 @@
             igorsays="I buy a card ... :(";
             curhand.push(bCard);
         }
+
+
+    function actionYou() {
+        // human *chooses* , either to drop a card, or to buy a card
+        youTryHandCard();
 
 
     function youTryHandCard() {
@@ -189,15 +196,19 @@
         }
 
 
-    function buyCard() {
+    function buyRandomCard() {
         ckHouseEmpty();
-        // @@TODO: optie mk 2 speelwijzen: je krijgt bovenste kaart v house, of random kaart v house
+        @@TODO: optie mk 2 speelwijzen: je krijgt bovenste kaart v house, of random kaart v house)
         var willekeurig=Math.floor(Math.random()*house.length);
         var cardcontent = house[willekeurig];
         house.splice(willekeurig,1);
         curhand.push(cardcontent);
         }
 
+    function buyTopCard() {
+        house.splice(0,1);
+        curhand.push(cardcontent);
+        }
 
     function descCard(cCard) {
      	var serial = cCard.replace("c","");
@@ -244,7 +255,7 @@
 
 
     function takeSequence() {
-        switchUser();
+        switchUser(user);
         // @@TODO: player kan OFWEL card on table gooien OFWEL buyCard();
 	    descCard(curhand[(curhand.length-1)]);
         refreshHand();

@@ -28,6 +28,12 @@
     width: 18%;
     cursor: pointer;
     }
+.buttonpurple {
+    background-color: purple;
+    color: white;
+    width: 18%;
+    cursor: pointer;
+    }
 .buttonred {
     background-color: red;
     color: white;

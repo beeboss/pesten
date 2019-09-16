@@ -198,7 +198,7 @@
 
     function buyRandomCard() {
         ckHouseEmpty();
-        @@TODO: optie mk 2 speelwijzen: je krijgt bovenste kaart v house, of random kaart v house)
+        // @@TODO: optie mk 2 speelwijzen: je krijgt bovenste kaart v house, of random kaart v house)
         var willekeurig=Math.floor(Math.random()*house.length);
         var cardcontent = house[willekeurig];
         house.splice(willekeurig,1);
@@ -249,10 +249,6 @@
             }
 
 
-    function igorSpeak() {
-
-        }
-
 
     function takeSequence() {
         switchUser(user);
@@ -260,5 +256,4 @@
 	    descCard(curhand[(curhand.length-1)]);
         refreshHand();
         buildHouseString();
-        igorSpeak();
         }

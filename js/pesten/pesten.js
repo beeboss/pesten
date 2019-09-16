@@ -26,6 +26,26 @@
 
 
     // === functions ===
+
+    function updScreen() {
+        document.getElementById("id-nextup").innerHTML = "nextup: " + nextup ;
+        document.getElementById("comment").innerHTML = comment;
+        document.getElementById("id-igorsays").innerHTML = "igor: " + igorsays ;
+        document.getElementById("last").innerHTML = "last: " + altName ;
+
+        document.getElementById("id-ighand").innerHTML = igHandString;
+        document.getElementById("id-ontable").innerHTML = onTableString;
+        document.getElementById("id-yourhand").innerHTML = yourHandString;
+        document.getElementById("id-house").innerHTML = housestring;
+
+        document.getElementById("id-debug-ontable").innerHTML = "[ontable:" + ontable + "]";
+        document.getElementById("id-debug-igor").innerHTML = "igor: " + ighand ;
+        document.getElementById("id-debug-you").innerHTML = "you: " + yourhand ;
+        // reset values that are not updated with every move
+	    igorsays="";    // reset
+    }
+
+
     function shuffle(array) {
         var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -45,7 +65,7 @@
         }
 
 
-    function switchUser() {
+    exports.switchUser = () => {
         if ( user == "you" ) {
             user = "igor";
             curhand = ighand;
@@ -60,16 +80,15 @@
             nextup = "igor";
             youTryHandCard();
             }
-        document.getElementById("id-nextup").innerHTML = "nextup: " + nextup ;
         }
 
 
     function ckCardPlayable (cCard) {
-        topOfTable = ontable[(ontable.length - 1)];
-        mustBeSuit = topOfTable.suit;
-        mustBeNumber = topOfTable.rad;
-        wantToPlay = descCard[cCard];
-        document.getElementById('id_igor').innerHTML = "ckCardPlayable:returning 1 until this func works!!";
+        // topOfTable = ontable[(ontable.length - 1)];
+        // mustBeSuit = topOfTable.suit;
+        // mustBeNumber = topOfTable.rad;
+        // wantToPlay = descCard[cCard];
+        // document.getElementById('id_igor').innerHTML = "ckCardPlayable:returning 1 until this func works!!";
         return 1;
     }
 
@@ -97,7 +116,7 @@
 
          mayBePlayed = ckCardPlayable(e.target.id);
          if ( mayBePlayed == 0 ) {
-             document.getElementById("comment").innerHTML = "not a valid card";
+             comment = "not a valid card";
              }
          else {
              yourhand.splice(yourhand.indexOf(e.target.id), 1);
@@ -130,7 +149,6 @@
                     housestring = housestring + " <br>  ";
                 }
             }
-        document.getElementById("id-house").innerHTML=housestring;
         }
 
 
@@ -151,21 +169,15 @@
     function refreshHand() {
         if ( user == "igor" ) {
            igHandString = ArrayToString(ighand);
-           document.getElementById("id-ighand").innerHTML=igHandString;
-           document.getElementById("id-debug-igor").innerHTML = "igor: " + ighand ;
            }
         else  {           // user == you
            yourHandString = ArrayToString(yourhand);
-           document.getElementById("id-yourhand").innerHTML=yourHandString;
-           document.getElementById("id-debug-you").innerHTML = "you: " + yourhand ;
            }
         }
 
 
     function refreshTable() {
         onTableString = ArrayToString(ontable);
-        document.getElementById("id-ontable").innerHTML = onTableString;
-        document.getElementById("id-debug-ontable").innerHTML = "[ontable:" + ontable + "]";
         }
 
 
@@ -221,14 +233,13 @@
 			   igorsays="...";
       	       }
 	        altName = suit + " " + value;
-	        document.getElementById("last").innerHTML = "last: " + altName ;
+	        last = altName;
             return altName;
             }
 
 
     function igorSpeak() {
-	    document.getElementById("id-igorsays").innerHTML = "igor: " + igorsays ;
-	    igorsays="";    // reset
+
         }
 
 

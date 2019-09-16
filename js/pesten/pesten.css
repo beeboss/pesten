@@ -3,13 +3,15 @@
     color: yellow;
     font-weight: bold;
     }
-.playercolors {
+.player {
     background-color: black;
     color: red;
+    width: 30%;
     }
-.igorcolors {
+.igor {
     background-color: darkgrey;
     color: blue;
+    width: 30%;
     }
 .button {
     font-size: 22px;

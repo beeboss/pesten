@@ -1,70 +1,65 @@
 <html>
-   <!--- @@TODO: hieronder:body op color red werkt niet en in volgende cleanup verwijderen -->
-  <style>body { color: red; }></style>
-
-  <body>
-<head><meta charset="UTF-8"></head>
-<title>pesten.html</title>
-    <link rel="stylesheet" type="text/css" href="pesten.css" media="all" />
-    <style>
-        body {
-	    background-image: url("bg_1920x1080_wood_pesten_spel.jpg");
-	    background-size: 100%;
-	}
-    </style>
-
-    <body>
-    <script src="pesten.js"></script>
+   <body>
+      <head><meta charset="UTF-8"></head>
+      <title>pesten.html</title>
+      <link rel="stylesheet" type="text/css" href="pesten.css" media="all" />
+      <style>
+          body {
+          background-image: url("bg_1920x1080_wood_pesten_spel.jpg");
+          background-size: 100%;
+      }
+      </style>
 
 
-    <button class = "button buttongreen" onclick="shuffle(house) ; buildHouseString()">shuffle</button>
-    <button class = "button buttonblue" onclick="takeSequence();">take card</button>
-    <button class = "button buttonred" onclick="buildDeck();">redbutton</button>
+      <script src="pesten.js"></script>
 
 
-    <div class="stickynote" margin = 5px;>
-        <h5 --- info ---</h5>
-           <p id="selectedId" >selected card goes here</p>
-           <p id="last">last: - </p>
-           <p id="id-nextup">nextup goes here</p>
-           <p id="id-igorsays">igor: you begin</p>
-           <p id="id-debug-igor">** debug-igor goes here **</p>
-           <p id="id-debug-you">** debug-you goes here **</p>
-           <p id="id-debug-ontable">** debug-ontable goes here **</p>
-   </div>
+      <button class = "button buttongreen" onclick="shuffle(house) ; buildHouseString()">shuffle</button>
+      <button class = "button buttonblue" onclick="takeSequence();">take card</button>
+      <button class = "button buttonred" onclick="buildDeck();">redbutton</button>
 
-        <igorcolors>
-        <h3>Igor hand</h3>
-           <p id="id-ighand">Igor hand goes here</p>
 
-        </igorcolors>
+      <div class="stickynote" margin = 5px;>
+          <h5 --- info ---</h5>
+             <p id="selectedId" >selected card goes here</p>
+             <p id="last">last: - </p>
+             <p id="id-nextup">nextup goes here</p>
+             <p id="id-igorsays">igor: you begin</p>
+             <p id="id-debug-igor">** debug-igor goes here **</p>
+             <p id="id-debug-you">** debug-you goes here **</p>
+             <p id="id-debug-ontable">** debug-ontable goes here **</p>
+      </div>
 
-        <tablecolors>
-        <h3>table</h3>
-           <p id="id-ontable">ontable goes here</p>
-        </tablecolors>
 
-        <playercolors>
-        <h3>your hand</h3>
-           <div id="id-yourhand">
-	       <p your hand goes here>your hand goes here</p>
-	   </div>
+      <h3 class="igor">Igor hand</h3>
+         <p id="id-ighand" class="igor" >Igor hand goes here</p>
 
-        <br>
-        </playercolors>
 
-        <h4>house</h4>
-           <p id="id-house">house goes here</p>
+      <h3>table</h3>
+         <p id="id-ontable">ontable goes here</p>
 
-        <br>
-        <h4>trashed</h4>
-    </fontYellow>
-    </body>
-<script>
-// --- main ---
-// @@TODO: is aanroep dit script nog nodig? (denk van wel omdat geen btn ernaar reft)
-youTryHandCard();
-</script>
 
-</body>
+      <h3 class="player">your hand</h3>
+         <div id="id-yourhand" class="player">
+             <p your hand goes here>your hand goes here</p>
+         </div>
+       <br>
+
+
+       <h4>house</h4>
+          <p id="id-house">house goes here</p>
+       <br>
+
+
+       <h4>trashed</h4>
+
+   </body>
+
+   <script>
+   // --- main ---
+   // @@TODO: is aanroep dit script nog nodig? (denk van wel omdat geen btn ernaar reft)
+   youTryHandCard();
+   </script>
+
+   </body>
 </html>

@@ -167,7 +167,6 @@
                 for (column = 0 ; column < columnmax ; column++ ) {
                     i = (row*columnmax)+column;
                     if (i >= house.length) break buildhouse;
-                    altName = descCard(house[i]);
                     houseString= ArrayToString(house);   // expensive AND inside a loop: @@TODO:make func more efficient
                     }
                     houseString = houseString + " <br>  ";
@@ -224,6 +223,7 @@
 
 
     function buyTopCard() {
+        var cardcontent = house[0];
         house.splice(0,1);
         curhand.push(cardcontent);
         }

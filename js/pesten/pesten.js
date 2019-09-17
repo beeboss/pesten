@@ -18,6 +18,7 @@
     var curHandString=""
     var onTableString="";
     // ---
+    var comment="";
     var user="you";
     var nextup="you";
     var igorsays="";
@@ -32,22 +33,22 @@
 
     // === functions ===
 
-    function buildDeck() {
+/*    function buildDeck() {
         var i = 0;
         while ( i < 54 ) {
             house[i]="c" + i;
             i++;
             }
         }
+*/
 
-
-    function cardNames() {
+/*    function cardNames() {
         }
-
+*/
 
     function updScreen() {
         document.getElementById("id-nextup").innerHTML = "nextup: " + nextup ;
-        document.getElementById("comment").innerHTML = comment;
+        document.getElementById("id-comment").innerHTML = comment;
         document.getElementById("id-igorsays").innerHTML = "igor: " + igorsays ;
         document.getElementById("last").innerHTML = "last: " + altName ;
 
@@ -61,6 +62,10 @@
         document.getElementById("id-debug-you").innerHTML = "you: " + yourhand ;
         // reset values that are not updated with every move
 	    igorsays="...";    // reset
+        //----
+        refreshHand();
+        refreshTable();
+        refreshHouse();
     }
 
 
@@ -112,7 +117,7 @@
 
     function actionPlayer(tmpUser) {
         if ( tmpUser == "igor") {
-            // strategie igor: gooi "eerste-de-beste" kaart neer als dat volgens regels mag, heb je niks, koop kaart
+            // strategie igor: gooi "eerste-de-beste" kaart neer als dat volgens regels mag, heb je niks, koop "TopCard" kaart
             var i = 0;
             while (  i < ighand[(ighand.length-1)] ) {
                 if ( ckCardPlayable[i] == 1 ) {
@@ -127,10 +132,9 @@
             }
         else     // user == you
            // human *chooses* , either to drop a card, or to buy a card
-           youTryHandCard();
+           youTryHandCard();   // evListener should be reset,
+           ;                   // buy-buttons are already available (don't need to be called here)
         }
-
-
 
 
     function youTryHandCard() {
@@ -140,12 +144,10 @@
          mayBePlayed = ckCardPlayable(e.target.id);
          if ( mayBePlayed == 0 ) {
              comment = "not a valid card";
-             return false;
              }
          else {
              yourhand.splice(yourhand.indexOf(e.target.id), 1);
              playCard(e.target.id);
-             return true;
              }})
          }
 
@@ -153,11 +155,10 @@
     function playCard(cCard) {
         ontable.push(cCard);
         topOfTable = cCard;
-        refreshTable();
         }
 
 
-    function buildHouseString() {
+    function refreshHouse() {
         var housestring="";
         buildhouse: {
             var i, row;
@@ -207,7 +208,7 @@
 
     function ckHouseEmpty() {
         if (house.length == 0) {
-           document.getElementById("comment").innerHTML = "no cards left in house";
+           document.getElementById("id-comment").innerHTML = "no cards left in house";
            return;
            }  // @@ als de 'if' niet hit, moet je ook code hebben (of ';'). ombouwen graag.
         }
@@ -229,7 +230,7 @@
         }
 
 
-    function desc2(cCard) {
+/*    function desc2(cCard) {
      	var serial = cCard.replace("c","");
 		var altName="";
         var suitNumber = Math.floor(serial/13);
@@ -237,16 +238,16 @@
         var value = serial - (suitNumber*13);
         // igorsays = cardNamesRU.value;
         }
-
+*/
 
     function descCard(cCard) {
      	var serial = cCard.replace("c","");
-		var altName="";
+		var tmpName="";
 		var suit="";
         if ( serial == 52 || serial == 53 ) {
-            altName = "joker";
-            last = altName;
-            return altName;
+            tmpName = "joker";
+            last = tmpName;
+            return tmpName;
             }
 		// -- non-joker cards
 		if (serial <= 13) { suit = "schoppen" ; }
@@ -276,21 +277,20 @@
 			default:
 			   value = rad ;
       	       }
-	    altName = suit + " " + value;
-	    last = altName;
-        return altName;
+	    tmpName = suit + " " + value;
+	    last = tmpName;
+        return tmpName;
         }
 
 
     function takeSequence() {
         switchUser(user);
         actionPlayer(user);
-        refreshHand();
-        buildHouseString();
+        updScreen();
         }
 
 
     // ---------------
     // --- exports ---
-    exports.switchUser = switchUser;
-    exports.descCard = descCard;
+//    exports.switchUser = switchUser;
+//    exports.descCard = descCard;

@@ -11,12 +11,18 @@ test('should output "igor" or "you"',  () => {
 
 
 // -----------
-test('should output [schoppen aas]', () => {
+test('should output "schoppen aas"', () => {
     const card1 = descCard('c1');
     expect(card1).toBe("schoppen aas");
-});
+    });
 
-test('should output [joker]', () => {
+test('should output "joker"', () => {
     const card1 = descCard('c53');
     expect(card1).toBe("joker");
-});
+    });
+
+//------------
+test('[housecards] should output "c0"', () => {
+    const cNumber = house[0];
+    expect(cNumber).toBe("c0");
+    });

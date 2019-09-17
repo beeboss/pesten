@@ -13,6 +13,7 @@
     var curhand=[];
     var ontable=[];
     var topOfTable=[];
+    var houseString="";
     var yourHandString="";
     var igHandString="";
     var curHandString=""
@@ -23,7 +24,6 @@
     var nextup="you";
     var igorsays="";
     // ---
-    var lastCard="-";
     var testString="<h1>ZZZZZZZZZZZZZZZZZZZ</h1>";
 
 
@@ -50,12 +50,12 @@
         document.getElementById("id-nextup").innerHTML = "nextup: " + nextup ;
         document.getElementById("id-comment").innerHTML = comment;
         document.getElementById("id-igorsays").innerHTML = "igor: " + igorsays ;
-        document.getElementById("last").innerHTML = "last: " + altName ;
+        document.getElementById("last").innerHTML = "last: " + last ;
 
         document.getElementById("id-ighand").innerHTML = igHandString;
         document.getElementById("id-ontable").innerHTML = onTableString;
         document.getElementById("id-yourhand").innerHTML = yourHandString;
-        document.getElementById("id-house").innerHTML = housestring;
+        document.getElementById("id-house").innerHTML = houseString;
 
         document.getElementById("id-debug-ontable").innerHTML = "[ontable:" + ontable + "]";
         document.getElementById("id-debug-igor").innerHTML = "igor: " + ighand ;
@@ -159,7 +159,6 @@
 
 
     function refreshHouse() {
-        var housestring="";
         buildhouse: {
             var i, row;
             var rowmax=6;
@@ -169,9 +168,9 @@
                     i = (row*columnmax)+column;
                     if (i >= house.length) break buildhouse;
                     altName = descCard(house[i]);
-                    housestring= ArrayToString(house);   // expensive AND inside a loop: @@TODO:make func more efficient
+                    houseString= ArrayToString(house);   // expensive AND inside a loop: @@TODO:make func more efficient
                     }
-                    housestring = housestring + " <br>  ";
+                    houseString = houseString + " <br>  ";
                 }
             }
         }

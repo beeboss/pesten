@@ -1,6 +1,8 @@
 <html>
     <body>
-        <h1>Rekentoets</h1>
+      <script src="rekentoets.js"></script>
+        <link type="stylesheet" href="rekentoets.css" media="all"></link>
+        <h1 class="green">Rekentoets</h1>
         <!-- @@todo:
              - schooljaar(moeilijkheidsgraad),
              - meer dan optellen: */-/\/
@@ -9,13 +11,14 @@
              .. </h2> -->
         <script  src="rekentoets.js"></script>
         <form>
+            Time left:<h2 id="id_timeleft"></h2>
             Opgave: <p id="id_problem"></p>
             Uitkomst: <input id="id_userSolution" type="text">
         </form>
         <p id="id_systemComment">..</p>
         <script>
-            genProblem();
-            setTimeout(ckUserSolution(), 5000);
+            init();
+            main();
         </script>
     </body>
 </html>

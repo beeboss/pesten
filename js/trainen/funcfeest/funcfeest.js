@@ -36,7 +36,8 @@ function randomImage() {
         document.getElementById('id_err_output').innerHTML = err.message;
         }
     finally {
-        alert('finally: randomImage run completed. With or without error');
+        ;
+        // alert will popup after.. @@TODO: invullen na *wat* // alert('finally: randomImage run completed. With or without error');
         }
     bColor = Math.floor(Math.random() * nbutton);
     document.getElementById('id_clickme').src="assets/clickMe" + bColor + ".jpg";

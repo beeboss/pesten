@@ -9,7 +9,7 @@ function showEl(id) {
 
 
 function randomColor(id) {
-    cset=["blue","green","red","pink","purple","yellow"];
+    cset=["blue","green","red","pink","purple","yellow","black","magenta"];
     rcolor = Math.floor(Math.random()*cset.length);
     document.getElementById(id).style.color = cset[rcolor];
     }

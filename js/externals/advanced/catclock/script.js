@@ -65,17 +65,17 @@ var updateClock = function()
   }
   else if (time == wakeuptime)
   {
-    image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat1.jpg";
+    image = "cat1.jpg";
     messageText = "Wake up!";
   }
   else if (time == lunchtime)
   {
-    image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat2.jpg";
+    image = "cat2.jpg";
     messageText = "Let's have some lunch!";
   }
   else if (time == naptime)
   {
-    image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat3.jpg";
+    image = "cat3.jpg";
     messageText = "Sleep tight!";
   }
   else if (time < noon)
@@ -85,12 +85,12 @@ var updateClock = function()
   }
   else if (time >= evening)
   {
-    image = "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cat_sleep.jpg";
+    image = "Cat_sleep.jpg";
     messageText = "Good evening!";
   }
   else
   {
-    image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/normalTime.jpg";
+    image = "normalTime.jpg";
     messageText = "Good afternoon!";
   }
 
@@ -104,6 +104,7 @@ updateClock();
 
 // Getting the clock to increment once a second
 var myInterval = 5000;
+// org: setInterval( updateClock, myInterval);
 setInterval( updateClock, myInterval);
 
 

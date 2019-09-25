@@ -5,6 +5,7 @@ function genProblem() {
     document.getElementById('id_problem').innerHTML = a + "+" + b;
 }
 
+
 function ckAnswer() {
     var answer = document.getElementById('id_answer').value;
     if (answer == rightSolution) {
@@ -19,9 +20,10 @@ function ckAnswer() {
 
 function setTimer() {
     var timeLeft = timeToAnswer;
-    var myInterval = 1000;
+    var myInterval = 500;
     setInterval(ckTimeIsUp, myInterval);
 }
+
 
 function wallClock() {
     var time = new Date();
@@ -40,6 +42,7 @@ function ckTimeIsUp() {
     }
 }
 
+
 /// --- (start) imported funcs sleep,demo -----
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -57,10 +60,10 @@ var TimedOut;
 
 // --- init ---
 function init() {
-    var timeToAnswer = 5;
-    var gTimeLeft = 5;
-    var rightSolution = "";
-    var TimedOut = 0;
+    timeToAnswer = 5;
+    gTimeLeft = 5;
+    rightSolution = "";
+    TimedOut = 0;
 }
 
 

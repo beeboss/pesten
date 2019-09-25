@@ -1,18 +1,27 @@
+
+cset = ["blue", "green", "red", "pink", "purple", "yellow", "black", "magenta"];
+
 function hideEl(id) {
     document.getElementById(id).style.display = "none";
-    }
+}
 
 
 function showEl(id) {
     document.getElementById(id).style.display = "block";
-    }
+}
+
+
+function removeEl(id) {
+    var el = document.getElementById(id);
+    el.remove;
+}
+
 
 
 function randomColor(id) {
-    cset=["blue","green","red","pink","purple","yellow","black","magenta"];
-    rcolor = Math.floor(Math.random()*cset.length);
+    rcolor = Math.floor(Math.random() * cset.length);
     document.getElementById(id).style.color = cset[rcolor];
-    }
+}
 
 
 function ckEmptyInput(id) {
@@ -20,34 +29,31 @@ function ckEmptyInput(id) {
         alert("Please provide value for field");
         // @@TODO: nog aanwijzen *welk* field, kleur rood, pijl erbij, ..
         return false;
-        }
-    else {
+    } else {
         return true;
-        }
     }
+}
 
 
 function randomImage() {
     var nbutton = document.getElementById('id_nbutton').value;
     try {
         ckEmptyInput('id_nbutton');
-        }
-    catch(err) {
+    } catch (err) {
         document.getElementById('id_err_output').innerHTML = err.message;
-        }
-    finally {
+    } finally {
         ;
         // alert will popup after.. @@TODO: invullen na *wat* // alert('finally: randomImage run completed. With or without error');
-        }
-    bColor = Math.floor(Math.random() * nbutton);
-    document.getElementById('id_clickme').src="assets/clickMe" + bColor + ".jpg";
     }
+    bColor = Math.floor(Math.random() * nbutton);
+    document.getElementById('id_clickme').src = "assets/clickMe" + bColor + ".jpg";
+}
 
 
 
 function reloadDoc() {
     location.reload();
-    }
+}
 
 
 function eloqButton() {
@@ -55,5 +61,9 @@ function eloqButton() {
     var button = document.getElementById('id_eloq');
     button.addEventListener("click", function() {
         alert("eloqButton: button clicked.");
-        });
+    });
+}
+
+function weg() {
+    blah;
     }

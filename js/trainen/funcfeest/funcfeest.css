@@ -1,25 +1,29 @@
-
 .snickers {
-    color: #f4bd4b;
     background-color: #461808;
-    }
+    color: yellow;
+}
+
+.migtest {
+    background-color: #ff0000;
+    color: #555555;
+}
 
 .buttonred {
     color: white;
     background-color: red;
     style: pointer;
-    }
+}
 
 div {
-  width: 320px;
-  padding: 10px;
-  border: 5px solid red;
-  margin: 200;
-  }
+    width: 320px;
+    padding: 10px;
+    border: 5px solid red;
+    margin: 200;
+}
 
 .divmig {
-  width: 160px;
-  padding: 10px;
-  border: 5px solid green;
-  margin: 0;
-  }
+    width: 160px;
+    padding: 10px;
+    border: 5px solid green;
+    margin: 0;
+}

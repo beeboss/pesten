@@ -1,6 +1,12 @@
 
 cset = ["blue", "green", "red", "pink", "purple", "yellow", "black", "magenta"];
 
+
+
+function createEl() {
+    // nog te bouwen. Nu eerst voor Victor iets bouwen.
+}
+
 function hideEl(id) {
     document.getElementById(id).style.display = "none";
 }
@@ -12,10 +18,39 @@ function showEl(id) {
 
 
 function removeEl(id) {
+    // @@TODO: idee: groter/groot aantal els maken, en degene waar je op klikt verdwijnt.
+    //  bv. je kan een tekening (bv. letter 'A' of atari logo)  nabouwen door els weg te gooien
     var el = document.getElementById(id);
-    el.remove;
+    el.parentNode.removeChild(el);
 }
 
+
+function btnBecomesImg() {
+    // first, appendChild, then rm org element. This way, we have something to refer to.
+    var el = document.getElementById("id_snickers");
+    var snickerimg="<img src='realSnickers.jpeg' alt='realSnickers'></img>";
+    el.parentNode.appendChild(snickerimg);
+    el.parentNode.removeChild(el);
+}
+
+
+// function mkTable() {
+//     /// idee: dat je bv. atari logo of letter A nabouwt door elementen te removen, \
+//     ///    ... hierna kijkt js of je zelfde bouwde als het voorbeeld.
+//     var i, row;
+//     var rowmax = 8;
+//     var columnmax = 8;
+//     for (row = 0; row < rowmax; row++) {
+//         for (column = 0; column < columnmax; column++) {
+//             i = (row * columnmax) + column;
+//             /// hier element=char plaatsen
+//             }
+//             houseString = ArrayToString(house); // expensive AND inside a loop: @@TODO:make func more efficient
+//         }
+//         houseString = houseString + " <br>  ";
+//         }
+//     }
+// }
 
 
 function randomColor(id) {

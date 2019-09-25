@@ -5,13 +5,14 @@
   </head>
   <body>
     <header>Hi, I'm your header today</header>
-    <link type="stylesheet" content="text/css" href="./funcfeest.css" media="all"></link>
+    <link rel="stylesheet" type="text/css" href="funcfeest.css" media="all"></link>
     <script src="funcfeest.js"></script>
 
 
     <button onclick="document.getElementById('demo').innerHTML=Date();">show time</button>
     <button onclick="hideEl('demo');">hide el</button>
     <button onclick="showEl('demo')";>show el</button>
+    <button onclick="destroyEl('demo')";>DESTROY @#$ el</button>
     <button onclick="randomColor('demo')";>random color</button>
     <button class="button buttonred" onclick="reloadDoc()";>RELOAD</button>
     <button id="id_eloq" onclick="eloqButton();">activate eloqButton</button>
@@ -27,8 +28,10 @@
 
 
     <p  class="p snickers" id="demo" >stuff happens here</p>
-    <button class="button snickers" onclick=this.innerHTML="(geklikt)";>SNICKERS!</button>
+    <button class="button snickers" id="id_snickers"  onclick=this.innerHTML="(geklikt)";>SNICKERS!</button>
 
+    <p class="snickers">snickers kleuren test</p>
+    <p class="migtest">migtest kleuren hier aanwezig</p>
 
 
   </body>

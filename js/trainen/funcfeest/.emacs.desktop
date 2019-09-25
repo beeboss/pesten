@@ -1,0 +1,55 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Wed Sep 25 13:46:29 2019
+;; Desktop file format version 208
+;; Emacs version 25.3.1
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (23947 21397 818885 267000) (desktop . "208") "root@joetoep.diffcity.com" nil nil ((((tty-type . "xterm") (tty . "/dev/tty") (display-type . color) (background-mode . dark) (foreground-color . "unspecified-fg") (menu-bar-lines . 0) (background-color . "unspecified-bg") (mouse-color . "red") (font . "tty") (height . 52) (width . 225) (modeline . t) (unsplittable) (frameset--id . "E31D-7793-BB42-1496") (frameset--mini t) (minibuffer . t)) ((min-height . 4) (min-width . 20) (min-height-ignore . 3) (min-width-ignore . 4) (min-height-safe . 1) (min-width-safe . 4) (min-pixel-height . 4) (min-pixel-width . 20) (min-pixel-height-ignore . 3) (min-pixel-width-ignore . 4) (min-pixel-height-safe . 1) (min-pixel-width-safe . 4)) hc (pixel-width . 225) (pixel-height . 51) (total-width . 225) (total-height . 51) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 113) (pixel-height . 51) (total-width . 113) (total-height . 51) (normal-height . 1.0) (normal-width . 0.5) (buffer "funcfeest.css" (selected . t) (hscroll . 0) (fringes 0 0 nil) (margins nil) (scroll-bars nil 0 t nil 0 nil) (vscroll . 0) (dedicated) (point . 1) (start . 1))) (leaf (last . t) (pixel-width . 112) (pixel-height . 51) (total-width . 112) (total-height . 51) (normal-height . 1.0) (normal-width . 0.5) (buffer "*Buffer List*" (selected) (hscroll . 0) (fringes 0 0 nil) (margins nil) (scroll-bars nil 0 t nil 0 nil) (vscroll . 0) (dedicated) (point . 1) (start . 1)))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring nil)
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("/srv/www/js/trainen/funcfeest" "~/.emacs" "/srv/www/js/trainen/funcfeest/funcfeest.js" "/srv/www/js/trainen/funcfeest/funcfeest.html" "/srv/www/js/trainen/funcfeest/funcfeest.css" "/srv/www/js/externals/eloq/chap5/05_higher_order.js" "/etc/ssh/sshd_config" "/srv/www/js/pesten/pesten.html" "~/.zshrc" "/home/jonas/.mutt/muttrc" "~/kopie" "/etc/EXPORT/safekeep/SOURCES/SRC-bbf/wordpress-yml.yml" "/etc/EXPORT/safekeep/SOURCES/SRC-bbf/bbf-project-jails-config.yml" "/etc/motd" "~/stappenplan-merge-wip.txt" "~/.emacs.d/elpa/solarized-theme-20190809.1202/solarized-theme-autoloads.el" "/srv/www/js/trainen/rekentoets/rekentoets.js" "/srv/www/js/trainen/rekentoets/rekentoets.html" "/srv/www/js/trainen/rekentoets/rekentoets.css" "~/psych.txt" "/etc/EXPORT/safekeep/SOURCES/SRC-js/vandaag-js-uniq-joetoep.yml"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/srv/www/js/trainen/funcfeest/funcfeest.css"
+  "funcfeest.css"
+  'css-mode
+  nil
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/srv/www/js/trainen/funcfeest/funcfeest.html"
+  "funcfeest.html"
+  'html-mode
+  nil
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/srv/www/js/trainen/funcfeest/funcfeest.js"
+  "funcfeest.js"
+  'js-mode
+  nil
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+

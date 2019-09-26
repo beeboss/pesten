@@ -1,4 +1,4 @@
-const { switchUser, descCard , house, user } = require('./pesten');
+const { switchUser, descCard , ckCardPlayable, house, user } = require('./pesten');
 
 /*// -----------
 //  ik ga niet switchuser ombouwen zodat test werkt en prog raar wordt,
@@ -29,3 +29,13 @@ test('[housecards] should output "c1"', () => {
     const cNumber = house[0];
     expect(cNumber).toBe("c1");
     });
+//------------
+test('[ckCardPlayable] should output 1 #without quotes', () => {
+    const cReturnValueCCP = ckCardPlayable();
+    expect(cReturnValueCCP).toBe(1);
+});
+//------------
+test('[igorThink] should output 1 #without quotes', () => {
+    const cReturnValueCCP = ckCardPlayable();
+    expect(cReturnValueCCP).toBe(1);
+});

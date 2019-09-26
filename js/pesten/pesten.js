@@ -1,5 +1,6 @@
 // === pesten-init-n-functions ===
 // --- init ---
+var exports = {};
 var card = [];
 var deck = [];
 // @@TODO: array voor house bouwen: for/while loop mk, de 'c' ervoor plakken met een map ofzo
@@ -25,7 +26,7 @@ var nextup = "igor";
 var igorsays = "";
 // ---
 var testString = "<h1>ZZZZZZZZZZZZZZZZZZZ</h1>";
-
+var igThinksString = "hmmm...";
 
 // === user-defined vars ===
 defCardWidthPerc = 6;
@@ -116,28 +117,30 @@ function ckCardPlayable(cCard) {
 }
 
 
-function actionPlayer(tmpUser) {
-    if (tmpUser == "igor") {
-        // strategie igor: gooi "eerste-de-beste" kaart neer als dat volgens regels mag, heb je niks, koop "TopCard" kaart
-        var i = 0;
-        while (i < ighand[(ighand.length - 1)]) {
-            if (ckCardPlayable[i] == 1) {
-                igorsays = "I throw ighand[i]";
-                playCard(ighand[i]);
-                i++;
-            }
+function igorTurn() {
+    var thinkTime=1500 + Math.floor(Math.random(700));
+    document.getElementById('id_wait_boolean').src="wait-for-igor.png";
+    setInterval({},thinkTime);
+    document.getElementById('id_igthinks').innerHTML="igor-nonwaiting.png";
+    // strategie igor: gooi "eerste-de-beste" kaart neer als dat volgens regels mag, heb je niks, koop "TopCard" kaart
+    var i = 0;
+    while (i < ighand[(ighand.length - 1)]) {
+        if (ckCardPlayable[i] == 1) {
+            igorsays = "I throw ighand[i]";
+            playCard(ighand[i]);
+            i++;
         }
-        bCard = buyTopCard();
-        igorsays = "I buy a card ... :(";
-        curhand.push(bCard);
-    } else // user == you
-        // human *chooses* , either to drop a card, or to buy a card
-        youTryHandCard(); // evListener should be reset, \
-    // ... buy-buttons are already available (don't need to be called here)
+        else {
+            bCard = buyTopCard();
+            igorsays = "I buy a card ... :(";
+            curhand.push(bCard);
+        }
+    }
 }
 
 
-function youTryHandCard() {
+function youTurn() {
+    // options: either drop a card, or buy a card
     document.getElementById("id-yourhand").addEventListener("click", function(e) {
         // e.target will be the item that was clicked on
 
@@ -149,6 +152,16 @@ function youTryHandCard() {
             playCard(e.target.id);
         }
     })
+}
+
+
+function actionPlayer(tmpUser) {
+    if (tmpUser == "igor") {
+        igorTurn();
+    }
+    else  {
+        youTurn();
+    }
 }
 
 
@@ -312,3 +325,4 @@ exports.switchUser = switchUser;
 exports.house = house;
 exports.user = user;
 exports.descCard = descCard;
+exports.ckCardPlayable = ckCardPlayable;

@@ -3,15 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "pesten.js",
-  "directories": {
-    "test": "tests"
-  },
   "dependencies": {
     "jest": "^24.9.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "jest"
+    "test": "jest --watch"
   },
   "author": "",
   "license": "ISC"

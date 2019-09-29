@@ -118,7 +118,7 @@ function igorTurn() {
         }
         else {
             bCard = buyTopCard();
-            igorsays = "I buy a card ... :(";
+            igorsays = "I buy ... :(";
             curhand.push(bCard);
         }
     }
@@ -126,13 +126,13 @@ function igorTurn() {
 
 
 function youTurn() {
-    // options: either drop a card, or buy a card
+    // options: either drop a card. Buying cards is handled by their buttons.
     document.getElementById("id-yourhand").addEventListener("click", function(e) {
         // e.target will be the item that was clicked on
 
         mayBePlayed = ckCardPlayable(e.target.id);
         if (mayBePlayed == 0) {
-            comment = "not a valid card";
+            comment = "** not a valid card **";
         } else {
             yourhand.splice(yourhand.indexOf(e.target.id), 1);
             playCard(e.target.id);
@@ -143,6 +143,7 @@ function youTurn() {
 
 function actionPlayer(tmpUser) {
     if (tmpUser == "igor") {
+        // @@TODO: disable buying card for human while it's Igor's turn
         igorTurn();
     }
     else  {
@@ -280,6 +281,14 @@ function descCard(cCard) {
 }
 
 
+function dealSix() {
+    i=0;
+    for ( i = 0 ; i < 12 ; i++ ) {
+        curhand.push(house[0]);
+        switchUser();
+    }
+}
+
 function gameStart() {
     gameOn = 1;
     comment = "Game Started";
@@ -289,6 +298,7 @@ function gameStart() {
 function gameLoop() {
     while ( gameOn == 1 ) {
         actionPlayer(user);
+        refreshHand();
         ckGameOver();
         user = switchUser();
         updScreen();
@@ -300,7 +310,7 @@ function ckGameOver() {
     if (ighand.length == 0) {
         winner = "igor";
     }
-    else if (yourhan.length == 0) {
+    else if (yourhand.length == 0) {
         winner = "you";
     }
 }

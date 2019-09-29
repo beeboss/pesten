@@ -1,8 +1,6 @@
 const { switchUser, descCard , ckCardPlayable, house, user } = require('./pesten');
 
 /*// -----------
-//  ik ga niet switchuser ombouwen zodat test werkt en prog raar wordt,
-//   het is raar om switchuser(you) > user wordt igor..
    test('should output "igor" or "you"',  () => {
     const text = switchUser();
     expect(text).toBe("igor");

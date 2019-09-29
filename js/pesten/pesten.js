@@ -1,4 +1,4 @@
-// === pesten-init-n-functions ===
+// === pesten.js ===
 // --- init ---
 var exports = {};
 var card = [];

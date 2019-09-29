@@ -34,20 +34,6 @@ defCardWidthPerc = 6;
 
 
 // === functions ===
-
-/*    function buildDeck() {
-        var i = 0;
-        while ( i < 54 ) {
-            house[i]="c" + i;
-            i++;
-            }
-        }
-*/
-
-/*    function cardNames() {
-        }
-*/
-
 function updScreen() {
     // first, update raw values = hands, second, update stats:
     refreshHand();
@@ -244,15 +230,6 @@ function buyTopCard() {
 }
 
 
-/*    function desc2(cCard) {
-     	var serial = cCard.replace("c","");
-		var altName="";
-        var suitNumber = Math.floor(serial/13);
-        var suit = suitlist.suitNumber;
-        var value = serial - (suitNumber*13);
-        // igorsays = cardNamesRU.value;
-        }
-*/
 
 function descCard(cCard) {
     var serial = cCard.replace("c", "");
@@ -313,10 +290,11 @@ function gameLoop() {
     while ( gameOn == 1 ) {
         actionPlayer(user);
         ckGameOver();
-        updScreen();
         user = switchUser();
+        updScreen();
     }
 }
+
 
 function ckGameOver() {
     if (ighand.length == 0) {
@@ -327,11 +305,36 @@ function ckGameOver() {
     }
 }
 
+
 function gameOver() {
     gameOn = 0;
     comment = "GAME OVER. Winner = " + winner;
 }
 
+
+/* -------- future funcs --------------- */
+/*    function buildDeck() {
+        var i = 0;
+        while ( i < 54 ) {
+            house[i]="c" + i;
+            i++;
+            }
+        }
+*/
+
+/*    function cardNames() {
+        }
+*/
+
+/*    function desc2(cCard) {
+     	var serial = cCard.replace("c","");
+		var altName="";
+        var suitNumber = Math.floor(serial/13);
+        var suit = suitlist.suitNumber;
+        var value = serial - (suitNumber*13);
+        // igorsays = cardNamesRU.value;
+        }
+*/
 
 // ---------------
 // --- exports ---

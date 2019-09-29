@@ -78,7 +78,6 @@ function shuffle(array) {
         temporaryValue, randomIndex;
     // While there remain elements to shuffle...
     while (0 !== currentIndex) {
-
         // Pick a remaining element...
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
@@ -303,21 +302,26 @@ function descCard(cCard) {
 }
 
 
-/*
-    function gameLoop() {
-        while ( gameOn == 1 ) {
-            actionPlayer(user);
-            ckGameOver();
-            updScreen();
-            user = switchUser();
-            }
-        }
+function gameStart() {
+    gameOn = 1;
+    comment = "Game Started";
+}
 
 
-        function gameOver() {
-        comment = "GAME OVER";
-        }
-*/
+function gameLoop() {
+    while ( gameOn == 1 ) {
+        actionPlayer(user);
+        ckGameOver();
+        updScreen();
+        user = switchUser();
+    }
+}
+
+function gameOver() {
+    gameOn = 0;
+    comment = "GAME OVER";
+}
+
 
 // ---------------
 // --- exports ---

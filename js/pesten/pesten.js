@@ -23,6 +23,7 @@ var onTableString = "";
 var comment = "";
 var user = "you";
 var nextup = "igor";
+var winner = "";
 var igorsays = "";
 // ---
 var testString = "<h1>ZZZZZZZZZZZZZZZZZZZ</h1>";
@@ -317,9 +318,18 @@ function gameLoop() {
     }
 }
 
+function ckGameOver() {
+    if (ighand.length == 0) {
+        winner = "igor";
+    }
+    else if (yourhan.length == 0) {
+        winner = "you";
+    }
+}
+
 function gameOver() {
     gameOn = 0;
-    comment = "GAME OVER";
+    comment = "GAME OVER. Winner = " + winner;
 }
 
 

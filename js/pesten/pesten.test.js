@@ -1,14 +1,5 @@
 const { switchUser, descCard , ckCardPlayable, house, user } = require('./pesten');
 
-/*// -----------
-   test('should output "igor" or "you"',  () => {
-    const text = switchUser();
-    expect(text).toBe("igor");
-
-    const text2 = switchUser("igor");
-    expect(text2).toBe("you");
-    });
-*/
 
 
 // -----------

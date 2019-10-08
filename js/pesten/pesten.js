@@ -1,6 +1,6 @@
 // === pesten.js ===
 // --- init ---
-var exports = {};
+//////// dit was de boosdoener //////////////var exports = {};
 var card = [];
 var deck = [];
 // @@TODO: array voor house bouwen: for/while loop mk, de 'c' ervoor plakken met een map ofzo
@@ -348,8 +348,8 @@ function gameOver() {
 
 // ---------------
 // --- exports ---
+exports.descCard = descCard;
 exports.switchUser = switchUser;
 exports.house = house;
 exports.user = user;
-exports.descCard = descCard;
 exports.ckCardPlayable = ckCardPlayable;

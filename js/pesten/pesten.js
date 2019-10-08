@@ -1,6 +1,5 @@
 // === pesten.js ===
 // --- init ---
-//////// dit was de boosdoener //////////////var exports = {};
 var card = [];
 var deck = [];
 // @@TODO: array voor house bouwen: for/while loop mk, de 'c' ervoor plakken met een map ofzo
@@ -44,7 +43,6 @@ function updScreen() {
     document.getElementById("id-comment").innerHTML = comment;
     document.getElementById("id-igorsays").innerHTML = "igor: " + igorsays;
 
-
     document.getElementById("id-ighand").innerHTML = igHandString;
     document.getElementById("id-ontable").innerHTML = onTableString;
     document.getElementById("id-yourhand").innerHTML = yourHandString;
@@ -56,7 +54,6 @@ function updScreen() {
     // reset values that are not updated with every move
     igorsays = "..."; // reset
     //----
-
 }
 
 
@@ -231,7 +228,6 @@ function buyTopCard() {
 }
 
 
-
 function descCard(cCard) {
     var serial = cCard.replace("c", "");
     var tmpName = "";
@@ -288,6 +284,7 @@ function dealSix() {
         switchUser();
     }
 }
+
 
 function gameStart() {
     gameOn = 1;

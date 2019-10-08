@@ -1,5 +1,4 @@
-// const { switchUser, descCard , ckCardPlayable, house, user } = require('./pesten');
-const { descCard } = require('./pesten');
+const { switchUser, descCard , ckCardPlayable, house, user } = require('./pesten');
 
 // ---- test the tester -- no deps on code ----
 test('object assignment', () => {
@@ -19,7 +18,7 @@ test('should output "schoppen aas"', () => {
 test('should output "joker"', () => {
     const card1 = descCard('c53');
     expect(card1).toBe("joker");
-    });
+});
 
 /* park ff
 //------------

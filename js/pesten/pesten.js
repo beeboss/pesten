@@ -101,7 +101,7 @@ function ckCardPlayable(cCard) {
 
 
 function igorThink() {
-    var thinkTime=1500 + Math.floor(Math.random(700));
+    var thinkTime=2500 + Math.floor(Math.random(700));
     document.getElementById('id_wait_boolean').src="igorThinks.png";
     setTimeout(igorTurn(), thinkTime);
 }
@@ -283,9 +283,10 @@ function descCard(cCard) {
 
 
 function dealSix() {
-    i=0;
+    var i=0;
     for ( i = 0 ; i < 12 ; i++ ) {
         curhand.push(house[0]);
+        house.splice(0, 1);
         switchUser();
     }
 }
@@ -299,7 +300,7 @@ function gameStart() {
 
 function gameLoop() {
     while ( gameOn == 1 ) {
-        setInterval(actionPlayer(user),33);
+        setInterval(actionPlayer(user),2000);
         refreshHand();
         ckGameOver();
         user = switchUser();

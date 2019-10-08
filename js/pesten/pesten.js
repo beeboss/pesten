@@ -100,11 +100,14 @@ function ckCardPlayable(cCard) {
 }
 
 
-function igorTurn() {
+function igorThink() {
     var thinkTime=1500 + Math.floor(Math.random(700));
-    document.getElementById('id_wait_boolean').src="wait-for-igor.png";
-    setInterval({},thinkTime);
-    document.getElementById('id_igthinks').innerHTML="igor-nonwaiting.png";
+    document.getElementById('id_wait_boolean').src="igorThinks.png";
+    setTimeout(igorTurn(), thinkTime);
+}
+
+
+function igorTurn() {
     // strategie igor: gooi "eerste-de-beste" kaart neer als dat volgens regels mag, heb je niks, koop "TopCard" kaart
     var i = 0;
     while (i < ighand[(ighand.length - 1)]) {
@@ -119,6 +122,8 @@ function igorTurn() {
             curhand.push(bCard);
         }
     }
+    document.getElementById('id_igthinks').innerHTML="igor-waits-for-you.png";
+
 }
 
 
@@ -294,7 +299,7 @@ function gameStart() {
 
 function gameLoop() {
     while ( gameOn == 1 ) {
-        actionPlayer(user);
+        setInterval(actionPlayer(user),33);
         refreshHand();
         ckGameOver();
         user = switchUser();

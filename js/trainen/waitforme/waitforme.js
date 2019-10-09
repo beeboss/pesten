@@ -16,8 +16,7 @@ function loopArrayAsync(ar, callback) {
             document.getElementById("id_miepstring").innerHTML = miepString;
         }
         else {
-            document.getElementById("id_jobstatus").innerHTML = "(ok) job done";
-            // @@kandidaat-weg:niks gekoppeld### callback();
+            callback();
         }
     }
 }
@@ -31,8 +30,7 @@ function myLoop() {
     var a = ["five", "six", "seven"];
     loopArrayAsync(a,
                    function() {
-                       boolDone = "yes";
-                       document.getElementById("id_jobstatus").innerHTML = boolDone;
+                       document.getElementById("id_jobstatus").innerHTML = "(ok) job done";
                    })
 }
 

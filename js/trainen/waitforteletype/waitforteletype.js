@@ -1,4 +1,4 @@
-// === waitForMe.js ===
+// === waitforteletype.js ===
 
 var boolDone = "no";
 

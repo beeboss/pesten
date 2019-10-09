@@ -27,12 +27,13 @@ function init() {
 
 
 function myLoop() {
-    var a = ["five", "six", "seven"];
+    var a = ["Yes", "," , "I", "think", "this", "will", "work", "," , "Mr.", "Watson", "."];
     loopArrayAsync(a,
                    function() {
                        document.getElementById("id_jobstatus").innerHTML = "(ok) job done";
                    })
 }
+
 
 function main() {
     init();

@@ -1,12 +1,13 @@
 // === waitforteletype.js ===
 
+const BUSYSTRING = "busy..";
+
 function loopArrayAsync(ar, callback) {
     var index;
 
     index = 0;
     miepString = "";
     loop();
-
     function loop() {
         if (index < ar.length) {
             miepString = miepString + (ar[index++]) + " ";
@@ -19,8 +20,15 @@ function loopArrayAsync(ar, callback) {
     }
 }
 
+
 function init() {
-    document.getElementById("id_jobstatus").innerHTML = "busy..";
+    document.getElementById("id_jobstatus").innerHTML = BUSYSTRING ;
+    document.getElementById("id_comment").innerHTML = "";
+}
+
+
+function housekeeping() {
+    document.getElementById("id_comment").innerHTML = "";
 }
 
 
@@ -29,11 +37,29 @@ function myLoop() {
     loopArrayAsync(a,
                    function() {
                        document.getElementById("id_jobstatus").innerHTML = "(ok) job done";
+                       housekeeping();  // @@ is this the best place to put housekeeping?
                    })
 }
 
 
+function ckAlreadyRunning() {
+    if ( document.getElementById("id_jobstatus").innerHTML.match(BUSYSTRING)) {
+        document.getElementById("id_comment").innerHTML = "Already busy";
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+
+
 function main() {
-    init();
-    myLoop();
+    var busy = ckAlreadyRunning();
+    if ( busy == 0 ) {
+        init();
+        myLoop();
+    }
+    else {
+        ; // do nothing
+    }
 }

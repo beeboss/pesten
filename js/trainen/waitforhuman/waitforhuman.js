@@ -1,6 +1,11 @@
 // === waitforhuman.js ===
 
 // @@TODO: ms kan ik iedere key opvangen en ze als chocolade letters weergeven #sinterklaas
+// @@TODO:
+//   - start timer when typing starts?
+//   - display timer value during typing
+//   - on-screen running log of laptimes when each sentence done
+//   - naam opgeven dus Jan kan tegen Truus opnemen, en comp meldt winnaar op end.
 
 var ArraySentences = [
     "The lazy fox jumped over the quick dog.",
@@ -61,6 +66,9 @@ function getChar() {
         scanChar = e.key;
         if (scanChar === "Enter") {
             ;   // inhibit ENTER so it does nothing
+        }
+        else if (scanChar === " " ) {
+            document.getElementById("id_keyHitFeedback").innerHTML = "SPACEBAR :D";
         }
         else if (scanChar === "F4") {
             abort();

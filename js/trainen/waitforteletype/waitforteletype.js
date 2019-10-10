@@ -1,7 +1,5 @@
 // === waitforteletype.js ===
 
-var boolDone = "no";
-
 function loopArrayAsync(ar, callback) {
     var index;
 

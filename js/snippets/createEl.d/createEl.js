@@ -7,6 +7,11 @@ var arrayAnimals = [
 ]
 
 
+var arrayAnimals = [
+    "dog","owl"
+]
+
+
 function createEl(elType) {
     if  ( ckAnimalsLeft())  {
         var newDiv = document.createElement("div");
@@ -16,7 +21,8 @@ function createEl(elType) {
         document.body.insertBefore(newDiv,currentDiv);
     }
     else {
-       document.getElementById("id_status").innerHTML = "no more animals left";
+        // document.getElementById("id_status").innerHTML = "no more animals left";
+        flashStatus("no more animals left");
     }
 }
 
@@ -28,6 +34,17 @@ function ckAnimalsLeft() {
     else {
         return 1;
     }
+}
+
+
+function flashStatus(textString) {
+    document.getElementById("id_status").innerHTML = textString;
+    setInterval(clearStatus(),3000);
+}
+
+
+function clearStatus() {
+    document.getElementById("id_status").innerHTML = "";
 }
 
 

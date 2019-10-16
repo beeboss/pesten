@@ -38,7 +38,7 @@ test('[housecards] should output "c1"', () => {
 
 
 //------------
-test('[igorThink] should output 1 #without quotes', () => {
-    const cReturnValueCCP = ckCardPlayable();
-    expect(cReturnValueCCP).toBe(1);
-});
+// igorthink is opgeheven // test('[igorThink] should output 1 #without quotes', () => {
+// igorthink is opgeheven //     const cReturnValueCCP = ckCardPlayable();
+// igorthink is opgeheven //     expect(cReturnValueCCP).toBe(1);
+// igorthink is opgeheven // });

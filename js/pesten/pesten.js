@@ -134,7 +134,7 @@ function youTurn() {
             yourhand.splice(yourhand.indexOf(e.target.id), 1);
             playCard(e.target.id);
         }
-    })
+    });
 }
 
 
@@ -215,7 +215,6 @@ function buyRandomCard() {
     var cardcontent = house[willekeurig];
     house.splice(willekeurig, 1);
     curhand.push(cardcontent);
-    refreshHand();
 }
 
 
@@ -224,7 +223,6 @@ function buyTopCard() {
     var cardcontent = house[0];
     house.splice(0, 1);
     curhand.push(cardcontent);
-    refreshHand();
 }
 
 

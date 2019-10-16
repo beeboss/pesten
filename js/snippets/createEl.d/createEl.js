@@ -3,12 +3,7 @@
 
 
 var arrayAnimals = [
-    "dog","cat","owl","horse","cow","mouse","mosquito","bat","donkey","monkey","bird"
-]
-
-
-var arrayAnimals = [
-    "dog","owl"
+    "bat","donkey","rabbit","bird"
 ]
 
 
@@ -21,8 +16,9 @@ function createEl(elType) {
         document.body.insertBefore(newDiv,currentDiv);
     }
     else {
-        // document.getElementById("id_status").innerHTML = "no more animals left";
-        flashStatus("no more animals left");
+        document.getElementById("id_status").innerHTML = "no more animals left";
+        /// flashStatus("no more animals left");
+        setTimeout(function(){ document.getElementById("id_status").innerHTML = ""; }, 800); // func *moet* inline
     }
 }
 
@@ -37,15 +33,16 @@ function ckAnimalsLeft() {
 }
 
 
-function flashStatus(textString) {
-    document.getElementById("id_status").innerHTML = textString;
-    setInterval(clearStatus(),3000);
-}
-
-
-function clearStatus() {
-    document.getElementById("id_status").innerHTML = "";
-}
+// ** funcs hieronder werken niet als ze callee zijn binnen een setTimeout()
+// function flashStatus(textString) {
+//     document.getElementById("id_status").innerHTML = textString;
+//     setTimeout(clearStatus(),3000);
+// }
+//
+//
+// function clearStatus() {
+//     document.getElementById("id_status").innerHTML = "";
+// }
 
 
 function randomAnimal() {

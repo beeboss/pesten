@@ -1,4 +1,10 @@
 .whiteOnRed {
     background-color: "red";
     color: "white";
+    width: 40%;
+}
+
+.buttongreen {
+    background-color: darkgreen;
+    color: white;
 }

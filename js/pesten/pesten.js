@@ -202,17 +202,15 @@ function refreshTable() {
 }
 
 
-function ckHouseEmpty() {
+function abortOnHouseEmpty() {
     if (house.length == 0) {
         document.getElementById("id-comment").innerHTML = "no cards left in house";
-        return;
-    } // @@ als de 'if' niet hit, moet je ook code hebben (of ';'). ombouwen graag.
+    }
 }
 
 
 function buyRandomCard() {
-    ckHouseEmpty();
-    // @@TODO: optie mk 2 speelwijzen: je krijgt bovenste kaart v house, of random kaart v house)
+    abortOnHouseEmpty();
     var willekeurig = Math.floor(Math.random() * house.length);
     var cardcontent = house[willekeurig];
     house.splice(willekeurig, 1);
@@ -222,9 +220,11 @@ function buyRandomCard() {
 
 
 function buyTopCard() {
+    abortOnHouseEmpty();
     var cardcontent = house[0];
     house.splice(0, 1);
     curhand.push(cardcontent);
+    refreshHand();
 }
 
 

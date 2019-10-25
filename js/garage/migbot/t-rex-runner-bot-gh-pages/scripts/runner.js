@@ -665,16 +665,21 @@
                 this.update();
             }
         },
-        /**
-         * Pause the game if the tab is not in focus.
-         */
+
         onVisibilityChange: function(e) {
-            if (document.hidden || document.webkitHidden || e.type == 'blur') {
-                this.stop();
-            } else {
-                this.play();
-            }
+            // do nothing
         },
+
+        //org willen we niet // /**
+        //org willen we niet //  * Pause the game if the tab is not in focus.
+        //org willen we niet //  */
+        //org willen we niet //
+        //org willen we niet //     if (document.hidden || document.webkitHidden || e.type == 'blur') {
+        //org willen we niet //         this.stop();
+        //org willen we niet //     } else {
+        //org willen we niet //         this.play();
+        //org willen we niet //     }
+        //org willen we niet // },
         /**
          * Play a sound.
          * @param {SoundBuffer} soundBuffer

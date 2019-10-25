@@ -1,5 +1,5 @@
 // === pesten.test.js ===
-const { descCard , switchUser, ckCardPlayable , house, user } = require('./pesten');
+const { descCard , switchUser , ckCardPlayable , house, newhouse, user } = require('./pesten');
 
 
 // ---- test the tester -- no deps on code ----
@@ -34,4 +34,18 @@ test('should output "joker"', () => {
 test('[housecards] should output "c1"', () => {
     const cNumber = house[0];
     expect(cNumber).toBe("c1");
+});
+
+///========
+
+//    buildDeck();
+test('[newhouse array] should output "c0"', () => {
+    const tCard = newhouse[0];
+    expect(tCard).toBe("c0");
+});
+
+test('[newhouse array] should output "c49"', () => {
+
+    const tCard = newhouse[49];
+    expect(tCard).toBe("c49");
 });

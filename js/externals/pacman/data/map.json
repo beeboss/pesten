@@ -1,5 +1,5 @@
-{ 
-	"posY" : 
+{
+	"posY" :
 	[
         {
             "row": 1,
@@ -22,7 +22,7 @@
                 { "col": 16, "type": "wall" },
 				{ "col": 17, "type": "wall" },
                 { "col": 18, "type": "wall" }
-             ] 
+             ]
 		},
 		{
             "row": 2,
@@ -45,7 +45,7 @@
                 { "col": 16, "type": "pill" },
 				{ "col": 17, "type": "powerpill" },
                 { "col": 18, "type": "wall" }
-             ] 
+             ]
 		},
 		{
             "row": 3,
@@ -68,7 +68,7 @@
                 { "col": 16, "type": "wall" },
 				{ "col": 17, "type": "pill" },
                 { "col": 18, "type": "wall" }
-             ] 
+             ]
 		},
 		{
             "row": 4,
@@ -91,7 +91,7 @@
                 { "col": 16, "type": "wall" },
 				{ "col": 17, "type": "pill" },
                 { "col": 18, "type": "wall" }
-             ] 
+             ]
 		},
 		{
             "row": 5,
@@ -114,7 +114,7 @@
                 { "col": 16, "type": "pill" },
 				{ "col": 17, "type": "pill" },
                 { "col": 18, "type": "wall" }
-             ] 
+             ]
 		},
 		{
             "row": 6,
@@ -137,7 +137,7 @@
                 { "col": 16, "type": "pill" },
 				{ "col": 17, "type": "wall" },
                 { "col": 18, "type": "wall" }
-             ] 
+             ]
 		},
 		{
             "row": 7,
@@ -160,7 +160,7 @@
                 { "col": 16, "type": "pill" },
 				{ "col": 17, "type": "pill" },
                 { "col": 18, "type": "pill" }
-             ] 
+             ]
 		},
 		{
             "row": 8,
@@ -183,7 +183,7 @@
                 { "col": 16, "type": "pill" },
 				{ "col": 17, "type": "wall" },
                 { "col": 18, "type": "wall" }
-             ] 
+             ]
 		},
 		{
             "row": 9,
@@ -206,7 +206,7 @@
                 { "col": 16, "type": "pill" },
 				{ "col": 17, "type": "wall" },
                 { "col": 18, "type": "wall" }
-             ] 
+             ]
 		},
 		{
             "row": 10,
@@ -229,7 +229,7 @@
                 { "col": 16, "type": "pill" },
 				{ "col": 17, "type": "pill" },
                 { "col": 18, "type": "wall" }
-             ] 
+             ]
 		},
 		{
             "row": 11,
@@ -252,7 +252,7 @@
                 { "col": 16, "type": "wall" },
 				{ "col": 17, "type": "pill" },
                 { "col": 18, "type": "wall" }
-             ] 
+             ]
 		},
 		{
             "row": 12,
@@ -275,7 +275,7 @@
                 { "col": 16, "type": "pill" },
 				{ "col": 17, "type": "powerpill" },
                 { "col": 18, "type": "wall" }
-             ] 
+             ]
 		},
 		{
             "row": 13,
@@ -298,8 +298,7 @@
                 { "col": 16, "type": "wall" },
 				{ "col": 17, "type": "wall" },
                 { "col": 18, "type": "wall" }
-             ] 
+             ]
 		}
 	]
 }
-

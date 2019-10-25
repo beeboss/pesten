@@ -5,6 +5,7 @@ var deck = [];
 // @@TODO: array voor house bouwen: for/while loop mk, de 'c' ervoor plakken met een map ofzo
 var house = ["c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9", "c10", "c11", "c12", "c13", "c14", "c15", "c16", "c17", "c18", "c19", "c20", "c21", "c22", "c23", "c24", "c25", "c26", "c27", "c28", "c29", "c30", "c31", "c32", "c33", "c34", "c35", "c36", "c37", "c38", "c39", "c40", "c41", "c42", "c43", "c44", "c45", "c46", "c47", "c48", "c49", "c50", "c51", "c52", "c53", "c54"];
 // var house=["c1","c2"];
+var newhouse=[];
 var cardNamesNL = ["aas", "2", "3", "4", "5", "6", "7", "8", "9", "10", "boer", "vrouw", "heer"];
 var cardNamesRU = ["туз", "2", "3", "4", "5", "6", "7", "8", "9", "10", "валет", "дама", "король"];
 var suitlist = ["schoppen", "harten", "klaveren", "ruiten"];
@@ -27,6 +28,11 @@ var igorsays = "";
 // ---
 var testString = "<h1>ZZZZZZZZZZZZZZZZZZZ</h1>";
 var igThinksString = "hmmm...";
+
+buildDeck(); // generate newhouse carddeck;
+
+
+/// teststring mag weg straks
 
 // === user-defined vars ===
 defCardWidthPerc = 6;
@@ -103,7 +109,7 @@ function ckCardPlayable(cCard) {
 function igorTurn() {
     var thinkTime=2500 + Math.floor(Math.random(700));
     document.getElementById('id_wait_boolean').src="igorThinks.png";
-    setTimeout( {}, thinkTime);
+    setTimeout( function() {}, thinkTime);
     // strategie igor: gooi "eerste-de-beste" kaart neer als dat volgens regels mag, heb je niks, koop "TopCard" kaart
     var i = 0;
     while (i < ighand[(ighand.length - 1)]) {
@@ -293,7 +299,7 @@ function gameStart() {
 
 function gameLoop() {
     while ( gameOn == 1 ) {
-        setTimeout( {} ,2000);
+        setTimeout( function() {}  ,2000);
         actionPlayer(user);
         refreshHand();
         ckGameOver();
@@ -319,15 +325,18 @@ function gameOver() {
 }
 
 
+function buildDeck() {
+  var i = 0;
+  while ( i < 54 ) {
+      newhouse.push("c" + i);
+      i++;
+  }
+}
+
+
 /* -------- future funcs --------------- */
-/*    function buildDeck() {
-        var i = 0;
-        while ( i < 54 ) {
-            house[i]="c" + i;
-            i++;
-            }
-        }
-*/
+
+
 
 /*    function cardNames() {
         }
@@ -347,6 +356,8 @@ function gameOver() {
 // --- exports ---
 exports.descCard = descCard;
 exports.switchUser = switchUser;
+exports.buildDeck = buildDeck;
 exports.house = house;
+exports.newhouse = newhouse;
 exports.user = user;
 exports.ckCardPlayable = ckCardPlayable;

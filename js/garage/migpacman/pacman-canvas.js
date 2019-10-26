@@ -447,11 +447,13 @@ function geronimo() {
 			canvas_walls.height = game.canvas.height;
 			context_walls = canvas_walls.getContext("2d");
 
-			context_walls.fillStyle = game.wallColor;
-			context_walls.strokeStyle = game.wallColor;
+			//context_walls.fillStyle = game.wallColor;
+            context_walls.fillStyle = "green";   // muur kleur inclusief randen
+			//context_walls.strokeStyle = game.wallColor;
+            context_walls.strokeStyle = "red";   // @@ niet zichtbaar?
 
 			//horizontal outer
-			buildWall(context_walls,0,0,18,1);
+			buildWall(context_walls,0,0,18,1);   // hiero verder
 			buildWall(context_walls,0,12,18,1);
 
 			// vertical outer

@@ -375,7 +375,6 @@ function geronimo() {
 			   $.each(this.posX, function() {
 				   if (this.type == "pill") {
 					temp++;
-					//console.log("Pill Count++. temp="+temp+". PillCount="+this.pillCount+".");
 					}
 				});
 			});
@@ -423,7 +422,7 @@ function geronimo() {
 		};
 
 		this.check = function() {
-		if ((this.pillCount === 0) && game.running) {
+		if ((this.pillCount === 0) && game.running) {    // @@pillCount = pills LEFT in the maze
 				this.nextLevel();
 			}
 		};
